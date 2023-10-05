@@ -22,3 +22,13 @@ pnpm-debug.log*
 
 #vscod-specific
 .vscode
+
+#video og billeder
+*.webm
+*.webp
+*.mov
+*.mp4
+*.jpg
+*.jpeg
+*.gif
+*.png

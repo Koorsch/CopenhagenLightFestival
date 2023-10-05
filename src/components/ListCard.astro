@@ -1,7 +1,18 @@
 ---
-
+const {data, type} = Astro.props;
+// console.log(data);
 ---
-
+<article>
+    <p>her er jeg</p>
+    <!-- <img src={data.aImg} alt={data.aDesc}>
+    <h2><b>{data.aName}</b></h2>
+    <p>{data.cName}</p>
+    <p>{data.aLoc}</p>
+    <p>{data.aHours}</p>
+    <p>{data.isPermanent}</p> -->
+    <img href="" alt="#">
+    {type && <p>hej mor</p>}
+</article>
 
 
 <style>

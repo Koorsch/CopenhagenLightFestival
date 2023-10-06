@@ -1,16 +1,58 @@
 ---
 const {data} = Astro.props;
-// console.log(data);
 ---
-<article class="listCard">
-    <img src={data.aImg} alt={data.aName}>
-    <p>{data.cName}</p>
-    {data.isPermanent && <p>isPermanent = true</p>}
-    {data.isPopup && <p>isPopup = true</p>}
+
+<article class="listContainer">
+        <section class="imgBox"> <!--border-left/bottom -->
+            <img src={data.aImg} alt={data.aName}>
+        </section>
+        <div class="bottomBox">
+            <section class="textBox"> <!-- border-bottom/left -->
+                <div class="topText">
+                    <h2>{data.aName}</h2>
+                    <a href={`artists/${data.slug}`}>Link til neste</a>
+                </div>
+                <div class="botText">
+                    <div>
+                        <p>By: {data.cName}</p>
+                        <p>Where: {data.aLoc}</p>
+                    </div>
+                    <div class="state">
+                        {data.isPermanent && <p>isPermanent = true</p>}
+                        {data.isPopup && <p>isPopup = true</p>}
+                    </div>
+                </div>
+            </section>
+        </div>
 </article>
 
 <style>
-article {
-    background-color: hotpink;
+.listContainer {
+    margin: 1rem;
+}
+.imgBox {
+}
+.bottomBox {
+    background-color: white;
+}
+.topText {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+}
+.botText {
+}
+.state {
+    display: block;
+    background-color: white;
+    border: 1px solid black;
+    justify-content: space-between;
+    grid-template-columns: auto;
+    margin: 0.5rem 0rem;
+    text-align: left;
+}
+img {
+    width: 100%;
+    height: auto;
 }
 </style>

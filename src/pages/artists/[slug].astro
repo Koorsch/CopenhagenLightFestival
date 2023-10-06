@@ -1,0 +1,25 @@
+---
+export async function getStaticPaths() {
+const data = await fetch("https://ogaxuggyhpkmcikcmeli.supabase.co/rest/v1/clf", 
+{
+    method: "GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9nYXh1Z2d5aHBrbWNpa2NtZWxpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTYyMjk5MTAsImV4cCI6MjAxMTgwNTkxMH0.sNxRHYiLpJz47USf7p1J_3MlM3lf10QkoUyIV8D0kyI",
+    },
+}
+).then(response => response.json());
+
+return data.map((artist) => {
+    return {
+        params: { slug: artist.slug},
+        props: { theArtist:artist },
+    };
+});
+}
+const {theArtist} = Astro.props;
+---
+
+
+<style>
+
+</style>

@@ -24,8 +24,8 @@ pnpm-debug.log*
 .vscode
 
 #video og billeder
-*.webm
-*.webp
+#*.webm
+#*.webp
 *.mov
 *.mp4
 *.jpg

@@ -1,61 +1,59 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import ListCard from "../components/ListCard.astro";
+import Map from "../components/Map.astro";
 
-const data = await fetch("https://ogaxuggyhpkmcikcmeli.supabase.co/rest/v1/clf", 
-{ 
-    method: "GET",
-    headers: {
-        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9nYXh1Z2d5aHBrbWNpa2NtZWxpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTYyMjk5MTAsImV4cCI6MjAxMTgwNTkxMH0.sNxRHYiLpJz47USf7p1J_3MlM3lf10QkoUyIV8D0kyI",
-    },
+const data = await fetch("https://ogaxuggyhpkmcikcmeli.supabase.co/rest/v1/clf", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9nYXh1Z2d5aHBrbWNpa2NtZWxpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTYyMjk5MTAsImV4cCI6MjAxMTgwNTkxMH0.sNxRHYiLpJz47USf7p1J_3MlM3lf10QkoUyIV8D0kyI",
+  },
 }).then((res) => res.json());
-
 ---
 
 <MainLayout title="COPENHAGEN LIGHT FESTIVAL">
-<section class="list-info">
+  <section class="list-info">
     <div id="info">
-        <a href="#">Installations</a>
-        <a href="#">Guided tours</a>
+      <a href="#">Installations</a>
+      <a href="#">Guided tours</a>
     </div>
-    <p>Experience beautiful, captivating sculptural elements
-        exhibited in urban spaces, 
-        Artistic lighting experiences and light based events and tours. 
-        Over 55 installations are possible to view for the entire period of the festival.</p>
-</section>
-<section class="listView">
-        <article class="art">
-            {
-                data.map((artist) => {
-                    return <ListCard data={artist}/>;
-                    })
-            }
-</section>
-</MainLayout>
+    <p>Experience beautiful, captivating sculptural elements exhibited in urban spaces, Artistic lighting experiences and light based events and tours. Over 55 installations are possible to view for the entire period of the festival.</p>
+  </section>
+  <section class="listView">
+    <article class="art">
+      {
+        data.map((artist) => {
+          return <ListCard data={artist} />;
+        })
+      }
+    </article>
+  </section>
 
+  <Map />
+</MainLayout>
 <style>
-.listView {
+  .listView {
     display: grid;
     width: 100%;
     margin: auto;
-}
-    .art {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(1fr, 1fr));
-        gap: 1rem;
-    }
-    .list-info {
-        display: grid;
-        margin: auto;
-        gap: 1rem;
-        width: 500px;
-        text-align: center;
-        place-content: center;
-    }
-    #info {
-        display: grid;
-        margin-top: 2rem;
-        grid-template-columns: 1fr 1fr;
-        justify-content: space-between;
-    }
+  }
+  .art {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(1fr, 1fr));
+    gap: 1rem;
+  }
+  .list-info {
+    display: grid;
+    margin: auto;
+    gap: 1rem;
+    width: 500px;
+    text-align: center;
+    place-content: center;
+  }
+  #info {
+    display: grid;
+    margin-top: 2rem;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+  }
 </style>

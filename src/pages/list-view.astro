@@ -18,7 +18,7 @@ const data = await fetch("https://ogaxuggyhpkmcikcmeli.supabase.co/rest/v1/clf",
         <a href="#">Installations</a>
         <a href="#">Guided tours</a>
     </div>
-    <p><span class="rainbow-text">Experience</span> beautiful, captivating sculptural elements
+    <p>Experience beautiful, captivating sculptural elements
         exhibited in urban spaces, 
         Artistic lighting experiences and light based events and tours. 
         Over 55 installations are possible to view for the entire period of the festival.</p>
@@ -36,14 +36,13 @@ const data = await fetch("https://ogaxuggyhpkmcikcmeli.supabase.co/rest/v1/clf",
 <style>
 .listView {
     display: grid;
-    width: 80%;
+    width: 100%;
     margin: auto;
-    align-self: center;
 }
     .art {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fill, minmax(1fr, 1fr));
+        gap: 1rem;
     }
     .list-info {
         display: grid;
@@ -59,11 +58,4 @@ const data = await fetch("https://ogaxuggyhpkmcikcmeli.supabase.co/rest/v1/clf",
         grid-template-columns: 1fr 1fr;
         justify-content: space-between;
     }
-p span {
-    font-size: large;
-}
-    .rainbow-text {
-        background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-        -webkit-background-clip: text;
-}
 </style>

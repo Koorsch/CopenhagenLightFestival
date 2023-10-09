@@ -24,8 +24,13 @@ pnpm-debug.log*
 .vscode
 
 #video og billeder
+<<<<<<< HEAD
 #*.webm
 #*.webp
+=======
+# *.webm
+# *.webp
+>>>>>>> origin/Andreas-list_view-database
 *.mov
 *.mp4
 *.jpg

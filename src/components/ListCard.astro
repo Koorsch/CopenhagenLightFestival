@@ -6,7 +6,7 @@ const {data} = Astro.props;
     <div class="overlap-group">
       <div class="text-box">
         <div class="header-text">
-          <div class="text-link"><div class="a-name">{data.aName}</div></div>
+          <div class="text-link"><div class="a-name"><a href=`artists/${data.slug}`>{data.aName}</a></div></div>
         </div>
         <div class="creator">
           <p class="c-name">

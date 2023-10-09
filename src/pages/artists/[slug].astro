@@ -1,5 +1,6 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
+import "../../css/global.css";
 export async function getStaticPaths() {
 const data = await fetch("https://ogaxuggyhpkmcikcmeli.supabase.co/rest/v1/clf", 
 {
@@ -20,12 +21,58 @@ return data.map((artist) => {
 const {theArtist} = Astro.props;
 ---
 
-<MainLayout title="COPENHAGEN LIGHT FESTIVAL">
-
-
-
+<MainLayout title={theArtist.aName}>
+<article class="artistBox">
+    <section class="topBox">
+        <h2>{theArtist.aName}</h2>
+        <p>By: <span>{theArtist.aName}</span></p>
+        <p>Location: <span>{theArtist.aLoc}</span></p>
+    </section>
+    <section class="imageBox">
+        <img src=`../${theArtist.aImg}`/>
+        <p>{theArtist.aDesc}</p>
+    </section>
+<section class="creatorBox">
+<div>Fyld herinde
+</div>
+<div>
+    <h3>{theArtist.cName}</h3>
+    <p>{theArtist.cDesc}</p>
+    <p><a href={theArtist.some}>{theArtist.some}</a></p>
+</div>
+<img src=`../${theArtist.aImg}` alt={theArtist.cName}/>
+</section>
+</article>
 </MainLayout>
 
 <style>
-
+    h2 {
+        margin: 0;
+    }
+.artistBox {
+    display: grid;
+    color: white;
+    margin: 15vh 25vh;
+    justify-content:center;
+    align-content:center;
+    gap: 1rem;
+    grid-template-rows: repeat(3, fit-content);
+}
+.topBox {
+    display: grid;
+}
+.imageBox {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: auto 1fr;
+}
+.creatorBox {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+}
+.creatorBox img {
+    margin: 1rem;
+    width: fit-content;
+    height: fit-content;
+}
 </style>

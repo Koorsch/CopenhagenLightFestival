@@ -1,30 +1,30 @@
 ---
 const {data} = Astro.props;
 ---
-<article class="list-card">
-    <div class="group">
-      <div class="overlap-group">
-        <div class="text-box">
-          <div class="header-text">
-            <div class="text-link"><div class="text-wrapper">{data.aName}</div></div>
-          </div>
-          <div class="creator">
-            <p class="cName">
-              <span class="span">By:</span> <span class="text-wrapper-2">{data.cName}</span>
-            </p>
-          </div>
-          <div class="location">
-            <p class="location-vestre">
-              <span class="span">Location:</span>
-              <span class="text-wrapper-2">{data.aLoc}</span>
-            </p>
-          </div>
+<div class="list-card">
+  <div class="group">
+    <div class="overlap-group">
+      <div class="text-box">
+        <div class="header-text">
+          <div class="text-link"><div class="a-name">INSEKTERNES BLIK</div></div>
         </div>
-        <div class="img-frame"><img class="img" src={data.aImg} /></div>
-        <img class="outline" src="media/svg/ListCardDesktopOutline.svg" />
+        <div class="creator">
+          <p class="c-name">
+            <span class="text-wrapper">By:</span> <span class="span"> Anna Rosa Hiort-Lorenzen (DK)</span>
+          </p>
+        </div>
+        <div class="location">
+          <p class="a-loc">
+            <span class="text-wrapper">Location:</span>
+            <span class="span"> Vestre Kirkegård, entrance from Sjælør Boulevard</span>
+          </p>
+        </div>
       </div>
+      <div class="img-frame"><img class="a-img" src="img/a-img.png" /></div>
+      <img class="outline" src="img/outline.svg" />
     </div>
-</article>
+  </div>
+</div>
 
 <style>
     :root {
@@ -87,10 +87,7 @@ const {data} = Astro.props;
 }
 
 .list-card {
-    display: flex;
-    flex: 0 1 300px;
-  width: 576px;
-  height: 460px;
+
 }
 
 .list-card .group {

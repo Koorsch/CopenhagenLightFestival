@@ -1,9 +1,59 @@
 ---
 
 ---
-
+<div class="grid_infobox">
+    <div class="grid_child">
+        <h3><span>COPENHAGEN LIGHT FESTIVAL</span> is an annual FREE light festival that transforms the dark and cold winter into a unique celebration of light art, installation design and illumination in the center of Copenhagen. </h3>
+    </div>
+    <div class="grid_child">
+        <p><span>55+ </span>Installations</p>
+    </div>
+    <div class="grid_child">
+        <p><span>3 </span>Weeks</p>
+    </div>
+    <div class="grid_child">
+        <p><span>Free </span>Attendance</p>
+    </div>
+</div>
 
 
 <style>
+    .grid_infobox {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+    
+    .grid_child:nth-child(1) {
+        text-align: center;
+        grid-column: 4 / span 6;
+    }
+    .grid_child:nth-child(2) {
+        grid-row:2;
+        grid-column: 4;
+        text-align: center;
+    }
+    .grid_child:nth-child(3) {
+        grid-row:2;
+        grid-column: 6 / span 2;
+        text-align: center;
+    }
+    .grid_child:nth-child(4) {
+        grid-row:2;
+        grid-column: 9;
+        text-align: center;
+    }
+
+    h3,p {
+        color: white;
+    }
+    .grid_child h3 span {
+        background: linear-gradient(to right, #FB383F,#7A67F3, #00B8B5); /* Replace these colors with your desired gradient */
+        -webkit-background-clip: text;
+        color: transparent;
+        display: inline;
+    }
+    .grid_child p span {
+        font-weight: bolder;
+    }
 
 </style>

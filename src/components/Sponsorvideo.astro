@@ -1,0 +1,36 @@
+---
+---
+
+<body>
+    <div class="sponsor_grid">
+    <div class="sponsor">
+        <iframe src="https://player.vimeo.com/video/804277768?background=1&amp;wmode=opaque" width="1280" height="720" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+       
+    </div>
+</div>
+</body>
+
+<style>
+    .sponsor_grid {
+        display: grid;
+        grid-template-columns: repeat(12,1fr);
+    }
+    .sponsor {
+        grid-column: 3 / span 8;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+</style>

@@ -6,28 +6,28 @@ const {data} = Astro.props;
     <div class="overlap-group">
       <div class="text-box">
         <div class="header-text">
-          <div class="text-link"><div class="a-name">INSEKTERNES BLIK</div></div>
+          <div class="text-link"><div class="a-name">{data.aName}</div></div>
         </div>
         <div class="creator">
           <p class="c-name">
-            <span class="text-wrapper">By:</span> <span class="span"> Anna Rosa Hiort-Lorenzen (DK)</span>
+            <span class="text-wrapper">By:</span> <span class="span">{data.cName}</span>
           </p>
         </div>
         <div class="location">
           <p class="a-loc">
             <span class="text-wrapper">Location:</span>
-            <span class="span"> Vestre Kirkegård, entrance from Sjælør Boulevard</span>
+            <span class="span">{data.aLoc}</span>
           </p>
         </div>
       </div>
-      <div class="img-frame"><img class="a-img" src="img/a-img.png" /></div>
-      <img class="outline" src="img/outline.svg" />
+      <div class="img-frame"><img class="a-img" src={data.aImg} /></div>
+      <img class="outline" src="media/svg/ListCardDesktopOutline.svg" />
     </div>
   </div>
 </div>
 
 <style>
-    :root {
+:root {
   --background-color: rgba(1, 50, 93, 1);
   --text-color: rgba(240, 240, 240, 1);
   --background-color-offblue: rgba(0, 184, 181, 1);
@@ -86,23 +86,24 @@ const {data} = Astro.props;
   --card-shadow: 0px 0px 150px 0px rgba(3, 164, 187, 0.5);
 }
 
-.list-card {
-
+p {
+  margin-bottom: 0;
 }
-
-.list-card .group {
+.list-card {
+  display: grid;
+  place-content: center;
+}
+.list-card .group {   
   position: relative;
   width: 576px;
   height: 449px;
 }
-
 .list-card .overlap-group {
   position: relative;
   width: 577px;
   height: 450px;
   left: -1px;
 }
-
 .list-card .text-box {
   display: flex;
   flex-direction: column;
@@ -115,7 +116,6 @@ const {data} = Astro.props;
   top: 339px;
   left: 203px;
 }
-
 .list-card .header-text {
   display: flex;
   flex-wrap: wrap;
@@ -126,9 +126,7 @@ const {data} = Astro.props;
   position: relative;
   align-self: stretch;
   width: 100%;
-  margin-top: -9.01px;
 }
-
 .list-card .text-link {
   display: flex;
   flex-wrap: wrap;
@@ -139,8 +137,7 @@ const {data} = Astro.props;
   align-self: stretch;
   flex-grow: 1;
 }
-
-.list-card .text-wrapper {
+.list-card .a-name {
   position: relative;
   flex: 1;
   font-family: var(--h3-normal-karla-font-family);
@@ -151,7 +148,6 @@ const {data} = Astro.props;
   line-height: var(--h3-normal-karla-line-height);
   font-style: var(--h3-normal-karla-font-style);
 }
-
 .list-card .creator {
   display: flex;
   flex-direction: column;
@@ -164,11 +160,9 @@ const {data} = Astro.props;
   width: 100%;
   flex: 0 0 auto;
 }
-
-.list-card .cName {
+.list-card .c-name {
   position: relative;
   width: fit-content;
-  margin-top: -1px;
   font-family: "Karla-Bold", Helvetica;
   font-weight: 400;
   color: var(--text-color);
@@ -177,15 +171,13 @@ const {data} = Astro.props;
   line-height: 23px;
   white-space: nowrap;
 }
-
-.list-card .span {
+.list-card .text-wrapper {
   font-weight: 700;
 }
-
-.list-card .text-wrapper-2 {
+.list-card .span {
   font-family: "Karla-Regular", Helvetica;
+  max-width: 20ch;
 }
-
 .list-card .location {
   display: flex;
   flex-direction: column;
@@ -199,8 +191,7 @@ const {data} = Astro.props;
   flex: 0 0 auto;
   margin-bottom: -9.01px;
 }
-
-.list-card .location-vestre {
+.list-card .a-loc {
   position: relative;
   align-self: stretch;
   margin-top: -1px;
@@ -211,7 +202,6 @@ const {data} = Astro.props;
   letter-spacing: 0;
   line-height: 23px;
 }
-
 .list-card .img-frame {
   display: flex;
   flex-direction: column;
@@ -224,8 +214,7 @@ const {data} = Astro.props;
   top: 0;
   left: 26px;
 }
-
-.list-card .img {
+.list-card .a-img {
   position: relative;
   flex: 1;
   align-self: stretch;
@@ -233,7 +222,6 @@ const {data} = Astro.props;
   flex-grow: 1;
   object-fit: cover;
 }
-
 .list-card .outline {
   position: absolute;
   width: 517px;
@@ -241,5 +229,4 @@ const {data} = Astro.props;
   top: 0;
   left: 0;
 }
-
 </style>

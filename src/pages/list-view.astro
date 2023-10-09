@@ -36,22 +36,22 @@ const data = await fetch("https://ogaxuggyhpkmcikcmeli.supabase.co/rest/v1/clf",
 <style>
 .listView {
     display: grid;
-    width: 100%;
     margin: auto;
 }
-    .art {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(1fr, 1fr));
-        gap: 1rem;
-    }
-    .list-info {
-        display: grid;
-        margin: auto;
-        gap: 1rem;
-        width: 500px;
-        text-align: center;
-        place-content: center;
-    }
+.art {
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(560px, 1fr));
+    gap: 1.5rem;
+}
+.list-info {
+    display: grid;
+    margin: auto;
+    gap: 1rem;
+    width: 60vw;
+    text-align: center;
+    place-content: center;
+}
     #info {
         display: grid;
         margin-top: 2rem;

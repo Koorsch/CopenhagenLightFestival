@@ -8,7 +8,7 @@
 
     <section class="footer">
       <div class="følg-os">
-        <p><b>Følg os</b></p>
+        <p class="overskrifter"><b>Følg os</b></p>
         <div class="icons-boks">
           <img class="icons" src="src/icons/facebook.webp" alt="facebook" />
           <img class="icons" src="src/icons/instagram.webp" alt="instagram" />
@@ -16,10 +16,9 @@
       </div>
 
       <div>
-        <p><b>Kontakt</b></p>
-
         <div class="kontakt-info">
-          <p>Mail <br /> info@copenhagenlightfestival.org <br /><br /> Phone <br /> +45 25556604</p>
+          <p class="overskrifter"><b>Kontakt</b></p>
+          <p class="info">Mail <br /> info@copenhagenlightfestival.org <br /><br /> Phone <br /> +45 25556604</p>
         </div>
       </div>
 
@@ -64,9 +63,6 @@
     margin-left: 10%;
   }
 
-  .kontakt-info {
-    margin-top: 5%;
-  }
   .footer {
     display: grid;
     grid-template-columns: 1fr 1fr 2fr;
@@ -123,5 +119,53 @@
 
   .nyhedsbrev p {
     font-size: 1.3rem;
+  }
+
+  @media (max-width: 800px) {
+    .footer {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10%;
+      padding-bottom: 15%;
+    }
+
+    .følg-os {
+      margin-left: 10%;
+      margin-left: 10%;
+    }
+
+    .kontakt-info {
+      margin-top: 15%;
+      margin-left: 10%;
+    }
+
+    .icons-boks {
+      display: flex;
+      flex-direction: row;
+      gap: 5%;
+    }
+
+    .info {
+      font-size: 1.2rem;
+    }
+
+    .icons {
+      width: 12%;
+      margin-top: 5%;
+    }
+
+    .nyhedsbrev {
+      width: 85%;
+      margin-left: 10%;
+      margin-top: 15%;
+    }
+
+    .nyhedsbrev p {
+      font-size: 2rem;
+    }
+
+    .overskrifter {
+      font-size: 2rem;
+    }
   }
 </style>

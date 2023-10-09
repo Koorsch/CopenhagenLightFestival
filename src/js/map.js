@@ -37,9 +37,9 @@ async function initMap() {
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
     // Create custom marker icons
-    const allEvening = new google.maps.MarkerImage("src/svg/Marker_red.svg", null, null, null, new google.maps.Size(50, 50));
-    const opningHours = new google.maps.MarkerImage("src/svg/Marker_blue.svg", null, null, null, new google.maps.Size(50, 50));
-    const popUp = new google.maps.MarkerImage("src/svg/Marker_orange.svg", null, null, null, new google.maps.Size(50, 50));
+    const allEvening = new google.maps.MarkerImage("/media/svg/Marker_Red.svg", null, null, null, new google.maps.Size(50, 50));
+    const opningHours = new google.maps.MarkerImage("/media/src/svg/Marker_blue.svg", null, null, null, new google.maps.Size(50, 50));
+    const popUp = new google.maps.MarkerImage("/media/src/svg/Marker_orange.svg", null, null, null, new google.maps.Size(50, 50));
 
 
   // The map, centered at festival

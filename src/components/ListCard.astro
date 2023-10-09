@@ -1,58 +1,245 @@
 ---
 const {data} = Astro.props;
 ---
-
-<article class="listContainer">
-        <section class="imgBox"> <!--border-left/bottom -->
-            <img src={data.aImg} alt={data.aName}>
-        </section>
-        <div class="bottomBox">
-            <section class="textBox"> <!-- border-bottom/left -->
-                <div class="topText">
-                    <h2>{data.aName}</h2>
-                    <a href={`artists/${data.slug}`}>Link til neste</a>
-                </div>
-                <div class="botText">
-                    <div>
-                        <p>By: {data.cName}</p>
-                        <p>Where: {data.aLoc}</p>
-                    </div>
-                    <div class="state">
-                        {data.isPermanent && <p>isPermanent = true</p>}
-                        {data.isPopup && <p>isPopup = true</p>}
-                    </div>
-                </div>
-            </section>
+<div class="list-card">
+  <div class="group">
+    <div class="overlap-group">
+      <div class="text-box">
+        <div class="header-text">
+          <div class="text-link"><div class="a-name">INSEKTERNES BLIK</div></div>
         </div>
-</article>
+        <div class="creator">
+          <p class="c-name">
+            <span class="text-wrapper">By:</span> <span class="span"> Anna Rosa Hiort-Lorenzen (DK)</span>
+          </p>
+        </div>
+        <div class="location">
+          <p class="a-loc">
+            <span class="text-wrapper">Location:</span>
+            <span class="span"> Vestre Kirkegård, entrance from Sjælør Boulevard</span>
+          </p>
+        </div>
+      </div>
+      <div class="img-frame"><img class="a-img" src="img/a-img.png" /></div>
+      <img class="outline" src="img/outline.svg" />
+    </div>
+  </div>
+</div>
 
 <style>
-.listContainer {
-    margin: 1rem;
+    :root {
+  --background-color: rgba(1, 50, 93, 1);
+  --text-color: rgba(240, 240, 240, 1);
+  --background-color-offblue: rgba(0, 184, 181, 1);
+  --footer-color: rgba(15, 15, 15, 1);
+  --accent-color: rgba(126, 89, 220, 1);
+  --h-1-font-family: "Karla-Regular", Helvetica;
+  --h-1-font-weight: 400;
+  --h-1-font-size: 60px;
+  --h-1-letter-spacing: 0px;
+  --h-1-line-height: normal;
+  --h-1-font-style: normal;
+  --h1-bold-font-family: "Karla-Bold", Helvetica;
+  --h1-bold-font-weight: 700;
+  --h1-bold-font-size: 60px;
+  --h1-bold-letter-spacing: 0px;
+  --h1-bold-line-height: normal;
+  --h1-bold-font-style: normal;
+  --h-2-font-family: "Karla-Regular", Helvetica;
+  --h-2-font-weight: 400;
+  --h-2-font-size: 36px;
+  --h-2-letter-spacing: 0px;
+  --h-2-line-height: normal;
+  --h-2-font-style: normal;
+  --h2-bold-font-family: "Karla-Bold", Helvetica;
+  --h2-bold-font-weight: 700;
+  --h2-bold-font-size: 36px;
+  --h2-bold-letter-spacing: 0px;
+  --h2-bold-line-height: normal;
+  --h2-bold-font-style: normal;
+  --paragraf-font-family: "Karla-Regular", Helvetica;
+  --paragraf-font-weight: 400;
+  --paragraf-font-size: 16px;
+  --paragraf-letter-spacing: 0px;
+  --paragraf-line-height: normal;
+  --paragraf-font-style: normal;
+  --h3-normal-karla-font-family: "Karla-Regular", Helvetica;
+  --h3-normal-karla-font-weight: 400;
+  --h3-normal-karla-font-size: 32px;
+  --h3-normal-karla-letter-spacing: 0px;
+  --h3-normal-karla-line-height: normal;
+  --h3-normal-karla-font-style: normal;
+  --h3-bold-karla-font-family: "Karla-Bold", Helvetica;
+  --h3-bold-karla-font-weight: 700;
+  --h3-bold-karla-font-size: 32px;
+  --h3-bold-karla-letter-spacing: 0px;
+  --h3-bold-karla-line-height: normal;
+  --h3-bold-karla-font-style: normal;
+  --p-bold-karla-font-family: "Karla-Bold", Helvetica;
+  --p-bold-karla-font-weight: 700;
+  --p-bold-karla-font-size: 16px;
+  --p-bold-karla-letter-spacing: 0px;
+  --p-bold-karla-line-height: normal;
+  --p-bold-karla-font-style: normal;
+  --glow: 0px 0px 250px 0px rgba(0, 222, 169, 1);
+  --line-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  --card-shadow: 0px 0px 150px 0px rgba(3, 164, 187, 0.5);
 }
-.imgBox {
+
+.list-card {
+
 }
-.bottomBox {
-    background-color: white;
+
+.list-card .group {
+  position: relative;
+  width: 576px;
+  height: 449px;
 }
-.topText {
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: space-between;
+
+.list-card .overlap-group {
+  position: relative;
+  width: 577px;
+  height: 450px;
+  left: -1px;
 }
-.botText {
+
+.list-card .text-box {
+  display: flex;
+  flex-direction: column;
+  width: 374px;
+  height: 102px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5px;
+  position: absolute;
+  top: 339px;
+  left: 203px;
 }
-.state {
-    display: block;
-    background-color: white;
-    border: 1px solid black;
-    justify-content: space-between;
-    grid-template-columns: auto;
-    margin: 0.5rem 0rem;
-    text-align: left;
+
+.list-card .header-text {
+  display: flex;
+  flex-wrap: wrap;
+  height: 64px;
+  align-items: flex-start;
+  gap: 0px 0px;
+  padding: 0px 5px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  margin-top: -9.01px;
 }
-img {
-    width: 100%;
-    height: auto;
+
+.list-card .text-link {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0px 0px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
 }
+
+.list-card .text-wrapper {
+  position: relative;
+  flex: 1;
+  font-family: var(--h3-normal-karla-font-family);
+  font-weight: var(--h3-normal-karla-font-weight);
+  color: var(--text-color);
+  font-size: var(--h3-normal-karla-font-size);
+  letter-spacing: var(--h3-normal-karla-letter-spacing);
+  line-height: var(--h3-normal-karla-line-height);
+  font-style: var(--h3-normal-karla-font-style);
+}
+
+.list-card .creator {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+  padding: 0px 5px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.list-card .cName {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Karla-Bold", Helvetica;
+  font-weight: 400;
+  color: var(--text-color);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 23px;
+  white-space: nowrap;
+}
+
+.list-card .span {
+  font-weight: 700;
+}
+
+.list-card .text-wrapper-2 {
+  font-family: "Karla-Regular", Helvetica;
+}
+
+.list-card .location {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+  padding: 0px 5px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  margin-bottom: -9.01px;
+}
+
+.list-card .location-vestre {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Karla-Bold", Helvetica;
+  font-weight: 400;
+  color: var(--text-color);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 23px;
+}
+
+.list-card .img-frame {
+  display: flex;
+  flex-direction: column;
+  width: 551px;
+  height: 338px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  top: 0;
+  left: 26px;
+}
+
+.list-card .img {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  width: 100%;
+  flex-grow: 1;
+  object-fit: cover;
+}
+
+.list-card .outline {
+  position: absolute;
+  width: 517px;
+  height: 450px;
+  top: 0;
+  left: 0;
+}
+
 </style>

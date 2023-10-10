@@ -1,187 +1,251 @@
----
+<div class="header">
+  <div class="logo">
+    <img class="logo" src="src/icons/globe.svg" alt="" />
+  </div>
 
----
+  <div class="burger">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+</div>
 
+<div class="navbar">
+  <div class="subnav">
+    <button class="subnavbtn">Program <i class="fa fa-caret-down"></i></button>
+    <ul class="subnav-content">
+      <li><a href="#company">Company</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#careers">Careers</a></li>
+    </ul>
+  </div>
 
- <nav role='navigation'>
-    <img src="media/img/logo/logo.webp" alt="logo" class="logo">
-  <ul>
-    
-    <li class="menubtn" ><a href="#">Program</a>
-    <ul>
-        <li><a href="">Program 2024</a></li>
-        <li><a href="">Tours + Pop-up events</a></li>
-        <li><a href="">Previous festivals</a></li>
-      </ul></li>
-    <li class="menubtn" ><a href="#">Info</a>
-      <ul>
-        <li><a href="">FAQ</a></li>
-        <li><a href="">About us</a></li>
-        <li><a href="">Work with us</a></li>
-        <li><a href="">Press</a></li>
-      </ul>
-    </li>
-    <li class="menubtn" ><a href="#">Map</a>
-    <ul>
-        <li><a href="">Full map</a></li>
-        <li><a href="">Routes</a></li>
-       
-      </ul></li>
-  </ul>
-</nav>  
+  <div class="subnav">
+    <button class="subnavbtn">Info <i class="fa fa-caret-down"></i></button>
+    <ul class="subnav-content">
+      <li><a href="#company">Company</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#careers">Careers</a></li>
+    </ul>
+  </div>
 
-<style>.logo {
-  float: left;
-  margin-right: 20px;
-  width: 12%;
-  margin-top: -55px;
-}
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: 'Lato', sans-serif;
-}
+  <div class="subnav">
+    <button class="subnavbtn">Map <i class="fa fa-caret-down"></i></button>
+    <ul class="subnav-content">
+      <li><a href="#company">Company</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#careers">Careers</a></li>
+    </ul>
+  </div>
 
-/*| Navigation |*/
-
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 120px;
-  width: 100%;
-  z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.253);
-}
-
-.menubtn {
-  margin-top: 35px;
-}
-
-nav ul {
-  list-style: none;
-  position: relative;
-  float: right;
-  margin-right: 30px;
-  display: inline-table;
-}
-
-nav ul li {
-  float: left;
-  margin-right: 20px;
-  border: 0.5px solid rgb(255, 255, 255);
-  -webkit-transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-
-nav ul li:hover {
-  background: rgba(212, 212, 212, 0.434);
-}
-
-nav ul li:hover > ul {
-  display: block;
-}
-
-nav ul li {
-  float: left;
-  -webkit-transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-
-nav ul li a {
-  display: block;
-  padding: 10px 20px;
-  color: #ffffff;
-  font-size: 0.9em;
-  letter-spacing: 1px;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-nav ul ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  box-shadow: -3px 3px 10px -2px rgba(0, 0, 0, .1);
-  border: 1px solid rgba(0, 0, 0, .1);
-}
-
-nav ul ul li {
-  float: none;
-  position: relative;
-}
-
-nav ul ul li a {
-  padding: 5px 10px;
-  width: 100px;
-  background-color: rgba(0, 14, 44, 0.76);
-  border-bottom: 1px solid rgba(0, 0, 0, .05);
-}
-
-nav ul ul ul {
-  position: absolute;
-  left: 100%;
-  top: 0;
-}
-
-/* Hamburger Menu Styles */
-
-.menu-icon {
-  display: none;
-  cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-  .menu-icon {
-      display: block;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-  }
-
-  .menu-icon .bar {
-      width: 25px;
-      height: 3px;
-      background-color: #fff;
-      margin: 5px 0;
-      transition: 0.4s;
-  }
-
-  .mobile-menu {
+  <style>
+    .burger {
       display: none;
-      background-color: rgba(0, 0, 0, 0.295);
+    }
+
+    .header {
+      position: relative;
+    }
+
+    .logo {
+      width: 30%;
+      margin: 1%;
       position: absolute;
-      top: 120px;
-      left: 0;
-      width: 100%;
+      top: 10px; /* Adjust the top position as needed */
+      left: 10px; /* Adjust the left position as needed */
+    }
+
+    .navbar {
+      position: absolute;
+      margin-top: 3%; /* Adjust the top position as needed */
+      right: 10px; /* Adjust the right position as needed */
+      z-index: 2; /* Ensure the navigation is above the video (increase if necessary) */
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
+
+    .navbar a {
+      float: left;
+      font-size: 16px;
+      color: white;
       text-align: center;
-      z-index: 999;
-  }
-
-  .mobile-menu.open {
-      display: block;
-  }
-
-  .mobile-menu ul {
-      padding: 20px 0;
-  }
-
-  .mobile-menu li {
-      margin-bottom: 10px;
-  }
-
-  .mobile-menu a {
-      color: #ffffff;
+      padding: 14px 16px;
       text-decoration: none;
-      font-size: 1.2em;
-      display: block;
-  }
-}
+    }
 
-   
-</style>
+    .subnav {
+      float: left;
+      overflow: hidden;
+      margin-right: 17px;
+      border: solid;
+      border-color: white;
+      border-width: 0.1rem;
+    }
+
+    .subnav .subnavbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+
+    .navbar a:hover,
+    .subnav:hover .subnavbtn {
+      background-color: rgba(18, 18, 88, 0.382);
+    }
+
+    .subnav-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: rgba(18, 18, 88, 0.382);
+      width: 95%;
+      height: 100%;
+      z-index: 1;
+      list-style: none; /* Remove default list styles */
+      padding: 0; /* Remove default padding */
+      margin-right: 15px; /* Remove default margin */
+    }
+
+    .subnav-content a {
+      display: block; /* Make each link a block element */
+      padding: 10px 16px; /* Adjust padding as needed */
+      color: white;
+      text-decoration: none;
+    }
+
+    .subnav-content a:hover {
+      background-color: #eee;
+      color: black;
+    }
+
+    .subnav:hover .subnav-content {
+      display: block;
+    }
+
+    @media (max-width: 800px) {
+      .navbar {
+        display: none;
+      }
+
+      .burger {
+        display: block;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 1000;
+        position: absolute;
+        margin-left: 90%;
+        margin-top: 5%;
+      }
+
+      .burger .line {
+        width: 100%;
+        height: 2px;
+        background-color: white;
+        margin-bottom: 5px;
+      }
+
+      .burger.active .line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .burger.active .line:nth-child(2) {
+        opacity: 0;
+      }
+
+      .burger.active .line:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      .navbar.active {
+        display: block;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        background-color: rgba(18, 18, 88, 0.382);
+        position: absolute;
+        top: 6%;
+        left: 0;
+        border: solid;
+        border-color: white;
+        border-width: 0.1rem;
+        width: 100%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+      }
+
+      .subnav:hover .subnav-content {
+        display: block;
+      }
+
+      .subnav {
+        margin-right: 17px;
+        border: none;
+        border-color: white;
+        border-width: 0.1rem;
+      }
+
+      .subnav-content {
+        display: none;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        left: 0;
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        list-style: none; /* Remove default list styles */
+        padding: 0; /* Remove default padding */
+        margin-right: 15px; /* Remove default margin */
+      }
+    }
+  </style>
+
+  <script>
+    const burger = document.querySelector(".burger");
+    const navbar = document.querySelector(".navbar"); // Add a dot before "navbar"
+    const menu = document.querySelector(".menu");
+    const links = document.querySelectorAll(".menu li a");
+    const subnav = document.querySelectorAll(".subnavbtn");
+    const subnavcontent = document.querySelectorAll(".subnav-content");
+
+    burger.addEventListener("click", () => {
+      burger.classList.toggle("active");
+      navbar.classList.toggle("active");
+    });
+
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        burger.classList.remove("active");
+        navbar.classList.remove("active");
+      });
+    });
+
+    function toggleSubnavContent(button) {
+      var subnavContent = button.nextElementSibling;
+      if (subnavContent.style.display === "block") {
+        subnavContent.style.display = "none";
+      } else {
+        subnavContent.style.display = "block";
+      }
+    }
+
+    // Get all subnav buttons and attach click event listeners
+    var subnavButtons = document.querySelectorAll(".subnavbtn");
+
+    subnavButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        toggleSubnavContent(this);
+      });
+    });
+  </script>
+</div>

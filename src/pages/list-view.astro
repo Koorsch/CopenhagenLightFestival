@@ -2,52 +2,51 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import ListCard from "../components/ListCard.astro";
 import Infolist from "../components/Infolist.astro";
+import Map from "../components/Map.astro";
 
-const data = await fetch("https://ogaxuggyhpkmcikcmeli.supabase.co/rest/v1/clf", 
-{ 
-    method: "GET",
-    headers: {
-        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9nYXh1Z2d5aHBrbWNpa2NtZWxpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTYyMjk5MTAsImV4cCI6MjAxMTgwNTkxMH0.sNxRHYiLpJz47USf7p1J_3MlM3lf10QkoUyIV8D0kyI",
-    },
+const data = await fetch("https://ogaxuggyhpkmcikcmeli.supabase.co/rest/v1/clf", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9nYXh1Z2d5aHBrbWNpa2NtZWxpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTYyMjk5MTAsImV4cCI6MjAxMTgwNTkxMH0.sNxRHYiLpJz47USf7p1J_3MlM3lf10QkoUyIV8D0kyI",
+  },
 }).then((res) => res.json());
-
 ---
 
 <MainLayout title="COPENHAGEN LIGHT FESTIVAL">
-<Infolist></Infolist>
-<section class="listView">
-        <article class="art">
-            {
-                data.map((artist) => {
-                    return <ListCard data={artist}/>;
-                    })
-            }
-</section>
-</MainLayout>
-
-<style>
-.listView {
-    display: grid;
-    margin: auto;
-}
-.art {
-    display: grid;
-    overflow: hidden;
-    grid-template-columns: repeat(auto-fit, minmax(560px, 1fr));
-    gap: 1.5rem;
-}
-.list-info {
-    display: grid;
-    margin: auto;
-    gap: 1rem;
-    width: 60vw;
-    text-align: center;
-    place-content: center;
-}
-    #info {
-        display: grid;
-        margin-top: 2rem;
-        grid-template-columns: 1fr 1fr;
-        justify-content: space-between;
+  <Infolist />
+  <section class="listView">
+    <article class="art">
+      {
+        data.map((artist) => {
+          return <ListCard data={artist} />;
+        })
+      }
+    </article>
+  </section>
+  <style>
+    .listView {
+      display: grid;
+      margin: auto;
     }
-</style>
+    .art {
+      display: grid;
+      overflow: hidden;
+      grid-template-columns: repeat(auto-fit, minmax(560px, 1fr));
+      gap: 1.5rem;
+    }
+    .list-info {
+      display: grid;
+      margin: auto;
+      gap: 1rem;
+      width: 60vw;
+      text-align: center;
+      place-content: center;
+    }
+    #info {
+      display: grid;
+      margin-top: 2rem;
+      grid-template-columns: 1fr 1fr;
+      justify-content: space-between;
+    }
+  </style>
+</MainLayout>

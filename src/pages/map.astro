@@ -1,4 +1,5 @@
 ---
+import Header from "../components/Header.astro";
 const {data} = Astro.props;
 ---
 
@@ -15,6 +16,7 @@ const {data} = Astro.props;
       <body>
         <div class="centered">
           <img class="logo" src="logo.png" alt="logo">
+          <Header></Header>
 
         </div>
         <!--The div element for the map -->
@@ -48,7 +50,7 @@ background: linear-gradient(90deg, rgba(5,31,124,1) 0%, rgba(0,7,103,1) 4%, rgba
   display: flex;
   justify-content: start;
   width: auto;
-  height: 10%;
+  height: 15%;
  
 }
 

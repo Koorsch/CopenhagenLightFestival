@@ -18,60 +18,162 @@ return data.map((artist) => {
 });
 }
 const {theArtist} = Astro.props;
+const cImg = `../${theArtist.cImg}`
 ---
 
 <MainLayout title={theArtist.aName}>
-<article class="artistBox">
-    <section class="topBox">
-        <h2>{theArtist.aName}</h2>
-        <p>By: <span>{theArtist.aName}</span></p>
-        <p>Location: <span>{theArtist.aLoc}</span></p>
-    </section>
-    <section class="imageBox">
-        <img src=`../${theArtist.aImg}`/>
-        <p>{theArtist.aDesc}</p>
-    </section>
-<section class="creatorBox">
-<div>Fyld herinde
-</div>
-<div>
-    <h3>{theArtist.cName}</h3>
-    <p>{theArtist.cDesc}</p>
-    <p><a href={theArtist.some}>{theArtist.some}</a></p>
-</div>
-<img src=`../${theArtist.aImg}` alt={theArtist.cName}/>
-</section>
-</article>
+    <div class="single-card">
+      <div class="container">
+        <div class="artist-box">
+          <div class="a-name"><h3>{theArtist.aName}</h3></div>
+          <p class="div">
+            <span class="text-wrapper">By: </span> <span class="span">{theArtist.cName}</span>
+          </p>
+          <p class="div">
+            <span class="text-wrapper">Location: </span>
+            <span class="span">{theArtist.aLoc}</span>
+          </p>
+        </div>
+        <div class="image-box">
+          <img class="a-img" src=`../${theArtist.aImg}` />
+          <p class="a-desc">{theArtist.aDesc}</p>
+        </div>
+        <div class="creator-box">
+          <img class="frame" src="../media/svg/SingleDesktopOutline.svg" />
+          <div class="creator">
+            <div class="frame-2">
+                <div class="c-name">
+                    {theArtist.cName}
+                </div>
+              <p class="c-desc">{theArtist.cDesc}</p>
+              <section id="">
+                <ul>
+                    {theArtist.links && <li>Links: <a href={theArtist.links}>{theArtist.links}</a></li>}
+                    {theArtist.some && <li>Social media: <a href={theArtist.some}>{theArtist.some}</a></li>}
+                    {theArtist.thanksTo && <li>Thanks to: {theArtist.thanksTo}</li>}
+                </ul>
+            </section>
+            <section>
+                {theArtist.aHours || theArtist.aDate ? <h4>Important dates!</h4>: null}
+                <ul>
+                    {theArtist.aHours && <li>Can be viewed at: {theArtist.aHours}</li>}
+                    {theArtist.aDate && <li>{theArtist.aDate}</li>}
+                </ul>
+             </section>
+            </div>
+            {theArtist.cImg && <img class="c-img" src={cImg} alt={theArtist.cDesc} />}
+          </div>
+        </div>
+      </div>
+    </div>
 </MainLayout>
 
 <style>
-    h2 {
-        margin: 0;
-    }
-.artistBox {
+.single-card {
+    margin-top: 15vh;
     display: grid;
-    color: white;
-    margin: 15vh 25vh;
-    justify-content:center;
-    align-content:center;
-    gap: 1rem;
-    grid-template-rows: repeat(3, fit-content);
+    width: 80%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    place-content: center;
+    grid-template-rows: auto 1fr 1fr;
 }
-.topBox {
-    display: grid;
+
+.single-card .container {
+display: grid;
+gap: 1rem;
+grid-template-rows: repeat(3, auto);
 }
-.imageBox {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: auto 1fr;
+
+.single-card .artist-box {
+  display: grid;
+  justify-content: left;
+  position: relative;
+  width: 100%;
+  height: fit-content;
 }
-.creatorBox {
-    display: grid;
-    grid-template-columns: auto 1fr 1fr;
+
+.single-card .div {
+  position: relative;
+  align-self: stretch;
 }
-.creatorBox img {
-    margin: 1rem;
-    width: fit-content;
-    height: fit-content;
+
+.single-card .image-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex: 0 1 400px;
+  gap: 40px;
+  position: relative;
+  align-self: stretch;
+}
+
+.single-card .a-img {
+  flex: 1;
+  flex-grow: 1;
+  object-fit: cover;
+  position: relative;
+  align-self: stretch;
+}
+
+.single-card .a-desc {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.single-card .creator-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  position: relative;
+}
+
+.single-card .frame {
+  position: relative;
+  width: 90%;
+  min-width:850px;
+  max-width: 1100px;
+}
+
+.single-card .creator {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  position: absolute;
+  left: 32%;
+}
+
+.single-card .frame-2 {
+  display: flex;
+  flex-direction: column;
+  width: 345.5px;
+  align-items: flex-start;
+  gap: 14px;
+  position: relative;
+  align-self: stretch;
+}
+
+.single-card .c-name {
+  position: relative;
+  align-self: stretch;
+}
+
+.single-card .c-desc {
+  position: relative;
+}
+
+.single-card .c-img {
+  position: relative;
+  align-self: stretch;
+  width: 300px;
+  object-fit: cover;
+}
+@mediaquery (max-width: 1000px) {
+    /* div.image-box {
+        flex-direction: columns;
+    } */
 }
 </style>

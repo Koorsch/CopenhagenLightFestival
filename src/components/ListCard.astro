@@ -1,5 +1,6 @@
 ---
 const {data} = Astro.props;
+import "../css/global.css";
 ---
 <div class="list-card">
   <div class="group">
@@ -27,65 +28,6 @@ const {data} = Astro.props;
 </div>
 
 <style>
-:root {
-  --background-color: rgba(1, 50, 93, 1);
-  --text-color: rgba(240, 240, 240, 1);
-  --background-color-offblue: rgba(0, 184, 181, 1);
-  --footer-color: rgba(15, 15, 15, 1);
-  --accent-color: rgba(126, 89, 220, 1);
-  --h-1-font-family: "Karla-Regular", Helvetica;
-  --h-1-font-weight: 400;
-  --h-1-font-size: 60px;
-  --h-1-letter-spacing: 0px;
-  --h-1-line-height: normal;
-  --h-1-font-style: normal;
-  --h1-bold-font-family: "Karla-Bold", Helvetica;
-  --h1-bold-font-weight: 700;
-  --h1-bold-font-size: 60px;
-  --h1-bold-letter-spacing: 0px;
-  --h1-bold-line-height: normal;
-  --h1-bold-font-style: normal;
-  --h-2-font-family: "Karla-Regular", Helvetica;
-  --h-2-font-weight: 400;
-  --h-2-font-size: 36px;
-  --h-2-letter-spacing: 0px;
-  --h-2-line-height: normal;
-  --h-2-font-style: normal;
-  --h2-bold-font-family: "Karla-Bold", Helvetica;
-  --h2-bold-font-weight: 700;
-  --h2-bold-font-size: 36px;
-  --h2-bold-letter-spacing: 0px;
-  --h2-bold-line-height: normal;
-  --h2-bold-font-style: normal;
-  --paragraf-font-family: "Karla-Regular", Helvetica;
-  --paragraf-font-weight: 400;
-  --paragraf-font-size: 16px;
-  --paragraf-letter-spacing: 0px;
-  --paragraf-line-height: normal;
-  --paragraf-font-style: normal;
-  --h3-normal-karla-font-family: "Karla-Regular", Helvetica;
-  --h3-normal-karla-font-weight: 400;
-  --h3-normal-karla-font-size: 32px;
-  --h3-normal-karla-letter-spacing: 0px;
-  --h3-normal-karla-line-height: normal;
-  --h3-normal-karla-font-style: normal;
-  --h3-bold-karla-font-family: "Karla-Bold", Helvetica;
-  --h3-bold-karla-font-weight: 700;
-  --h3-bold-karla-font-size: 32px;
-  --h3-bold-karla-letter-spacing: 0px;
-  --h3-bold-karla-line-height: normal;
-  --h3-bold-karla-font-style: normal;
-  --p-bold-karla-font-family: "Karla-Bold", Helvetica;
-  --p-bold-karla-font-weight: 700;
-  --p-bold-karla-font-size: 16px;
-  --p-bold-karla-letter-spacing: 0px;
-  --p-bold-karla-line-height: normal;
-  --p-bold-karla-font-style: normal;
-  --glow: 0px 0px 250px 0px rgba(0, 222, 169, 1);
-  --line-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  --card-shadow: 0px 0px 150px 0px rgba(3, 164, 187, 0.5);
-}
-
 p {
   margin-bottom: 0;
 }
@@ -109,6 +51,7 @@ p {
   flex-direction: column;
   width: 374px;
   height: 102px;
+  max-width: 35ch;
   align-items: flex-start;
   justify-content: center;
   padding: 5px;
@@ -140,13 +83,7 @@ p {
 .list-card .a-name {
   position: relative;
   flex: 1;
-  font-family: var(--h3-normal-karla-font-family);
-  font-weight: var(--h3-normal-karla-font-weight);
-  color: var(--text-color);
-  font-size: var(--h3-normal-karla-font-size);
-  letter-spacing: var(--h3-normal-karla-letter-spacing);
-  line-height: var(--h3-normal-karla-line-height);
-  font-style: var(--h3-normal-karla-font-style);
+  z-index: 100;
 }
 .list-card .creator {
   display: flex;
@@ -165,10 +102,7 @@ p {
   width: fit-content;
   font-family: "Karla-Bold", Helvetica;
   font-weight: 400;
-  color: var(--text-color);
   font-size: 12px;
-  letter-spacing: 0;
-  line-height: 23px;
   white-space: nowrap;
 }
 .list-card .text-wrapper {
@@ -218,7 +152,7 @@ p {
   position: relative;
   flex: 1;
   align-self: stretch;
-  width: 100%;
+  width: 90%;
   flex-grow: 1;
   object-fit: cover;
 }

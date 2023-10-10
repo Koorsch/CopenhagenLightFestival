@@ -1,15 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import ListCard from "../components/ListCard.astro";
-
-const data = await fetch("https://ogaxuggyhpkmcikcmeli.supabase.co/rest/v1/clf", 
-{ 
-    method: "GET",
-    headers: {
-        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9nYXh1Z2d5aHBrbWNpa2NtZWxpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTYyMjk5MTAsImV4cCI6MjAxMTgwNTkxMH0.sNxRHYiLpJz47USf7p1J_3MlM3lf10QkoUyIV8D0kyI",
-    },
-}).then((res) => res.json());
-
+import Gallery from "../components/Gallery.astro";
 ---
 
 <MainLayout title="COPENHAGEN LIGHT FESTIVAL">
@@ -25,11 +16,8 @@ const data = await fetch("https://ogaxuggyhpkmcikcmeli.supabase.co/rest/v1/clf",
 </section>
 <section class="listView">
         <article class="art">
-            {
-                data.map((artist) => {
-                    return <ListCard data={artist}/>;
-                    })
-            }
+            <Gallery />
+            </article>
 </section>
 </MainLayout>
 

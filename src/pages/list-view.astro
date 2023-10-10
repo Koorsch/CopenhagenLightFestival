@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import ListCard from "../components/ListCard.astro";
+import Infolist from "../components/Infolist.astro";
 
 const data = await fetch("https://ogaxuggyhpkmcikcmeli.supabase.co/rest/v1/clf", 
 { 
@@ -13,16 +14,7 @@ const data = await fetch("https://ogaxuggyhpkmcikcmeli.supabase.co/rest/v1/clf",
 ---
 
 <MainLayout title="COPENHAGEN LIGHT FESTIVAL">
-<section class="list-info">
-    <div id="info">
-        <a href="#">Installations</a>
-        <a href="#">Guided tours</a>
-    </div>
-    <p>Experience beautiful, captivating sculptural elements
-        exhibited in urban spaces, 
-        Artistic lighting experiences and light based events and tours. 
-        Over 55 installations are possible to view for the entire period of the festival.</p>
-</section>
+<Infolist></Infolist>
 <section class="listView">
         <article class="art">
             {

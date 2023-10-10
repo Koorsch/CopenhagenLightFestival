@@ -1,185 +1,251 @@
----
-
----
-
-<header>
+<div class="header">
   <div class="logo">
-    <img class="logo" src="media/img/logo/logo.webp" alt="logo" />
+    <img class="logo" src="src/icons/globe.svg" alt="" />
   </div>
 
-  <nav>
-    <ul class="menu">
-      <li class="menubtn">
-        <a href="#">Program</a>
-        <ul>
-          <li><a href="">Program 2024</a></li>
-          <li><a href="">Tours + Pop-up events</a></li>
-          <li><a href="">Previous festivals</a></li>
-        </ul>
-      </li>
+  <div class="burger">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+</div>
 
-      <li class="menubtn">
-        <a href="#">Info</a>
-        <ul>
-          <li><a href="">FAQ</a></li>
-          <li><a href="">About us</a></li>
-          <li><a href="">Work with us</a></li>
-          <li><a href="">Press</a></li>
-        </ul>
-      </li>
-
-      <li class="menubtn">
-        <a href="#">Map</a>
-        <ul>
-          <li><a href="">Full map</a></li>
-          <li><a href="">Routes</a></li>
-        </ul>
-      </li>
+<div class="navbar">
+  <div class="subnav">
+    <button class="subnavbtn">Program <i class="fa fa-caret-down"></i></button>
+    <ul class="subnav-content">
+      <li><a href="#company">Company</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#careers">Careers</a></li>
     </ul>
+  </div>
 
-    <div class="burger">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
-  </nav>
-</header>
+  <div class="subnav">
+    <button class="subnavbtn">Info <i class="fa fa-caret-down"></i></button>
+    <ul class="subnav-content">
+      <li><a href="#company">Company</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#careers">Careers</a></li>
+    </ul>
+  </div>
 
-<style>
-  header {
-    position: absolute;
-  }
+  <div class="subnav">
+    <button class="subnavbtn">Map <i class="fa fa-caret-down"></i></button>
+    <ul class="subnav-content">
+      <li><a href="#company">Company</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#careers">Careers</a></li>
+    </ul>
+  </div>
 
-  nav {
-    position: fixed;
-    top: 0;
-    right: 5%;
-    z-index: 1;
-    margin-top: 5%;
-  }
-
-  nav ul li {
-    list-style: none;
-    border: 1px solid rgb(255, 255, 255);
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-  }
-
-  nav ul li:hover {
-    background: rgba(212, 212, 212, 0.434);
-  }
-  nav ul li:hover > ul {
-    display: block;
-  }
-  nav ul li {
-    float: left;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-  }
-  nav ul li a {
-    display: block;
-    padding: 30px 20px;
-    color: #ffffff;
-    font-size: 0.9em;
-    letter-spacing: 1px;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-  nav ul ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    box-shadow: -3px 3px 10px -2px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .logo {
-    width: 50%;
-    margin: 0;
-    padding: 0;
-  }
-
-  .burger {
-    display: none;
-  }
-
-  @media (max-width: 800px) {
-    .logo {
-      width: 30%;
-      position: fixed;
-    }
-
-    .menu {
+  <style>
+    .burger {
       display: none;
     }
 
-    .burger {
-      display: block;
-      z-index: 1;
+    .header {
+      position: relative;
     }
 
-    .burger {
-      width: 30px;
-      height: 20px;
-      cursor: pointer;
-    }
-
-    .burger .line {
-      width: 100%;
-      height: 2px;
-      background-color: #ffffff;
-      margin-bottom: 5px;
-    }
-
-    .burger.active .line:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .burger.active .line:nth-child(2) {
-      opacity: 0;
-    }
-
-    .burger.active .line:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    nav.active .menu {
-      display: block;
-      background-color: #25064bd2;
+    .logo {
+      width: 30%;
+      margin: 1%;
       position: absolute;
-      top: 12%;
-      width: 100%;
-      left: 0;
+      top: 10px; /* Adjust the top position as needed */
+      left: 10px; /* Adjust the left position as needed */
     }
 
-    nav.active .menu li {
-      margin: 10px 20px;
+    .navbar {
+      position: absolute;
+      margin-top: 3%; /* Adjust the top position as needed */
+      right: 10px; /* Adjust the right position as needed */
+      z-index: 2; /* Ensure the navigation is above the video (increase if necessary) */
     }
 
-    nav.active .menu a {
-      font-size: 17px;
-      font-weight: bolder;
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
     }
-  }
-</style>
 
-<script>
-  const burger = document.querySelector(".burger");
-  const nav = document.querySelector("nav");
-  const menu = document.querySelector(".menu");
-  const links = document.querySelectorAll(".menu li a");
+    .navbar a {
+      float: left;
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
 
-  burger.addEventListener("click", () => {
-    burger.classList.toggle("active");
-    nav.classList.toggle("active");
-  });
+    .subnav {
+      float: left;
+      overflow: hidden;
+      margin-right: 17px;
+      border: solid;
+      border-color: white;
+      border-width: 0.1rem;
+    }
 
-  links.forEach((link) => {
-    link.addEventListener("click", () => {
-      burger.classList.remove("active");
-      nav.classList.remove("active");
+    .subnav .subnavbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+
+    .navbar a:hover,
+    .subnav:hover .subnavbtn {
+      background-color: rgba(18, 18, 88, 0.382);
+    }
+
+    .subnav-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: rgba(18, 18, 88, 0.382);
+      width: 95%;
+      height: 100%;
+      z-index: 1;
+      list-style: none; /* Remove default list styles */
+      padding: 0; /* Remove default padding */
+      margin-right: 15px; /* Remove default margin */
+    }
+
+    .subnav-content a {
+      display: block; /* Make each link a block element */
+      padding: 10px 16px; /* Adjust padding as needed */
+      color: white;
+      text-decoration: none;
+    }
+
+    .subnav-content a:hover {
+      background-color: #eee;
+      color: black;
+    }
+
+    .subnav:hover .subnav-content {
+      display: block;
+    }
+
+    @media (max-width: 800px) {
+      .navbar {
+        display: none;
+      }
+
+      .burger {
+        display: block;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 1000;
+        position: absolute;
+        margin-left: 90%;
+        margin-top: 5%;
+      }
+
+      .burger .line {
+        width: 100%;
+        height: 2px;
+        background-color: white;
+        margin-bottom: 5px;
+      }
+
+      .burger.active .line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .burger.active .line:nth-child(2) {
+        opacity: 0;
+      }
+
+      .burger.active .line:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      .navbar.active {
+        display: block;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        background-color: rgba(18, 18, 88, 0.382);
+        position: absolute;
+        top: 6%;
+        left: 0;
+        border: solid;
+        border-color: white;
+        border-width: 0.1rem;
+        width: 100%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+      }
+
+      .subnav:hover .subnav-content {
+        display: block;
+      }
+
+      .subnav {
+        margin-right: 17px;
+        border: none;
+        border-color: white;
+        border-width: 0.1rem;
+      }
+
+      .subnav-content {
+        display: none;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        left: 0;
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        list-style: none; /* Remove default list styles */
+        padding: 0; /* Remove default padding */
+        margin-right: 15px; /* Remove default margin */
+      }
+    }
+  </style>
+
+  <script>
+    const burger = document.querySelector(".burger");
+    const navbar = document.querySelector(".navbar"); // Add a dot before "navbar"
+    const menu = document.querySelector(".menu");
+    const links = document.querySelectorAll(".menu li a");
+    const subnav = document.querySelectorAll(".subnavbtn");
+    const subnavcontent = document.querySelectorAll(".subnav-content");
+
+    burger.addEventListener("click", () => {
+      burger.classList.toggle("active");
+      navbar.classList.toggle("active");
     });
-  });
-</script>
+
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        burger.classList.remove("active");
+        navbar.classList.remove("active");
+      });
+    });
+
+    function toggleSubnavContent(button) {
+      var subnavContent = button.nextElementSibling;
+      if (subnavContent.style.display === "block") {
+        subnavContent.style.display = "none";
+      } else {
+        subnavContent.style.display = "block";
+      }
+    }
+
+    // Get all subnav buttons and attach click event listeners
+    var subnavButtons = document.querySelectorAll(".subnavbtn");
+
+    subnavButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        toggleSubnavContent(this);
+      });
+    });
+  </script>
+</div>

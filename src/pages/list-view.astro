@@ -6,24 +6,10 @@ import Gallery from "../components/Gallery.astro";
 ---
 
 <MainLayout title="COPENHAGEN LIGHT FESTIVAL">
-  <Infolist />
-  <section class="listView">
-    <article class="art">
-      <Gallery />
-    </article>
-  </section>
-  <Map />
+    <Infolist />
+    <Gallery />
+    <Map />
 </MainLayout>
 
 <style>
-.listView {
-    display: grid;
-    margin: auto;
-}
-.art {
-    display: grid;
-    overflow: hidden;
-    grid-template-columns: repeat(auto-fit, minmax(560px, 1fr));
-    gap: 1.5rem;
-}
 </style>

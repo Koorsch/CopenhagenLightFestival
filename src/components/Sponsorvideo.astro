@@ -3,36 +3,32 @@
 
 <body>
     <div class="sponsor_grid">
-    <div class="sponsor">
-        <iframe src="https://player.vimeo.com/video/804277768?background=1&amp;wmode=opaque" width="1080" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-       
+        <div class="sponsor">
+            <iframe src="https://player.vimeo.com/video/804277768?background=1&amp;wmode=opaque" width="1080" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
     </div>
-</div>
 </body>
 
 <style>
     .sponsor_grid {
         display: grid;
-        grid-template-columns: repeat(13,1fr);
+        grid-template-columns: repeat(14, 1fr);
         margin-top: 10%;
+        text-align: center;
     }
+
     .sponsor {
-        grid-column: 3/span 10; 
-      
-    text-align: left;
-    width: 100%;
-    overflow: hidden;
-    margin-left: 8%;
-}
+        grid-column: 3 / span 10;
+        width: 100%;
+        overflow: hidden;
+    }
 
-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    z-index: -1;
-}
-
+    iframe {
+        display: block;
+        margin: 0 auto; 
+        width: 100%;
+        max-width: 1080px;
+        height: 480px;
+        object-fit: cover;
+    }
 </style>

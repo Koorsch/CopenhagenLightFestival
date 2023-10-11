@@ -1,113 +1,57 @@
 ---
 const {data} = Astro.props;
+import "../css/global.css";
 ---
 <div class="list-card">
   <div class="group">
     <div class="overlap-group">
       <div class="text-box">
         <div class="header-text">
-          <div class="text-link"><div class="a-name">INSEKTERNES BLIK</div></div>
+          <div class="text-link"><div class="a-name"><a href=`artists/${data.slug}`>{data.aName}</a></div></div>
         </div>
         <div class="creator">
           <p class="c-name">
-            <span class="text-wrapper">By:</span> <span class="span"> Anna Rosa Hiort-Lorenzen (DK)</span>
+            <span class="text-wrapper">By:</span> <span class="span">{data.cName}</span>
           </p>
         </div>
         <div class="location">
           <p class="a-loc">
             <span class="text-wrapper">Location:</span>
-            <span class="span"> Vestre Kirkegård, entrance from Sjælør Boulevard</span>
+            <span class="span">{data.aLoc}</span>
           </p>
         </div>
       </div>
-      <div class="img-frame"><img class="a-img" src="img/a-img.png" /></div>
-      <img class="outline" src="img/outline.svg" />
+      <div class="img-frame"><img class="a-img" src={data.aImg} /></div>
+      <img class="outline" src="media/svg/ListCardDesktopOutline.svg" />
     </div>
   </div>
 </div>
 
 <style>
-    :root {
-  --background-color: rgba(1, 50, 93, 1);
-  --text-color: rgba(240, 240, 240, 1);
-  --background-color-offblue: rgba(0, 184, 181, 1);
-  --footer-color: rgba(15, 15, 15, 1);
-  --accent-color: rgba(126, 89, 220, 1);
-  --h-1-font-family: "Karla-Regular", Helvetica;
-  --h-1-font-weight: 400;
-  --h-1-font-size: 60px;
-  --h-1-letter-spacing: 0px;
-  --h-1-line-height: normal;
-  --h-1-font-style: normal;
-  --h1-bold-font-family: "Karla-Bold", Helvetica;
-  --h1-bold-font-weight: 700;
-  --h1-bold-font-size: 60px;
-  --h1-bold-letter-spacing: 0px;
-  --h1-bold-line-height: normal;
-  --h1-bold-font-style: normal;
-  --h-2-font-family: "Karla-Regular", Helvetica;
-  --h-2-font-weight: 400;
-  --h-2-font-size: 36px;
-  --h-2-letter-spacing: 0px;
-  --h-2-line-height: normal;
-  --h-2-font-style: normal;
-  --h2-bold-font-family: "Karla-Bold", Helvetica;
-  --h2-bold-font-weight: 700;
-  --h2-bold-font-size: 36px;
-  --h2-bold-letter-spacing: 0px;
-  --h2-bold-line-height: normal;
-  --h2-bold-font-style: normal;
-  --paragraf-font-family: "Karla-Regular", Helvetica;
-  --paragraf-font-weight: 400;
-  --paragraf-font-size: 16px;
-  --paragraf-letter-spacing: 0px;
-  --paragraf-line-height: normal;
-  --paragraf-font-style: normal;
-  --h3-normal-karla-font-family: "Karla-Regular", Helvetica;
-  --h3-normal-karla-font-weight: 400;
-  --h3-normal-karla-font-size: 32px;
-  --h3-normal-karla-letter-spacing: 0px;
-  --h3-normal-karla-line-height: normal;
-  --h3-normal-karla-font-style: normal;
-  --h3-bold-karla-font-family: "Karla-Bold", Helvetica;
-  --h3-bold-karla-font-weight: 700;
-  --h3-bold-karla-font-size: 32px;
-  --h3-bold-karla-letter-spacing: 0px;
-  --h3-bold-karla-line-height: normal;
-  --h3-bold-karla-font-style: normal;
-  --p-bold-karla-font-family: "Karla-Bold", Helvetica;
-  --p-bold-karla-font-weight: 700;
-  --p-bold-karla-font-size: 16px;
-  --p-bold-karla-letter-spacing: 0px;
-  --p-bold-karla-line-height: normal;
-  --p-bold-karla-font-style: normal;
-  --glow: 0px 0px 250px 0px rgba(0, 222, 169, 1);
-  --line-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  --card-shadow: 0px 0px 150px 0px rgba(3, 164, 187, 0.5);
+p {
+  margin-bottom: 0;
 }
-
 .list-card {
-
+  display: grid;
+  place-content: center;
 }
-
-.list-card .group {
+.list-card .group {   
   position: relative;
   width: 576px;
   height: 449px;
 }
-
 .list-card .overlap-group {
   position: relative;
   width: 577px;
   height: 450px;
   left: -1px;
 }
-
 .list-card .text-box {
   display: flex;
   flex-direction: column;
   width: 374px;
   height: 102px;
+  max-width: 35ch;
   align-items: flex-start;
   justify-content: center;
   padding: 5px;
@@ -115,7 +59,6 @@ const {data} = Astro.props;
   top: 339px;
   left: 203px;
 }
-
 .list-card .header-text {
   display: flex;
   flex-wrap: wrap;
@@ -126,9 +69,7 @@ const {data} = Astro.props;
   position: relative;
   align-self: stretch;
   width: 100%;
-  margin-top: -9.01px;
 }
-
 .list-card .text-link {
   display: flex;
   flex-wrap: wrap;
@@ -139,19 +80,11 @@ const {data} = Astro.props;
   align-self: stretch;
   flex-grow: 1;
 }
-
-.list-card .text-wrapper {
+.list-card .a-name {
   position: relative;
   flex: 1;
-  font-family: var(--h3-normal-karla-font-family);
-  font-weight: var(--h3-normal-karla-font-weight);
-  color: var(--text-color);
-  font-size: var(--h3-normal-karla-font-size);
-  letter-spacing: var(--h3-normal-karla-letter-spacing);
-  line-height: var(--h3-normal-karla-line-height);
-  font-style: var(--h3-normal-karla-font-style);
+  z-index: 100;
 }
-
 .list-card .creator {
   display: flex;
   flex-direction: column;
@@ -164,28 +97,21 @@ const {data} = Astro.props;
   width: 100%;
   flex: 0 0 auto;
 }
-
-.list-card .cName {
+.list-card .c-name {
   position: relative;
   width: fit-content;
-  margin-top: -1px;
   font-family: "Karla-Bold", Helvetica;
   font-weight: 400;
-  color: var(--text-color);
   font-size: 12px;
-  letter-spacing: 0;
-  line-height: 23px;
   white-space: nowrap;
 }
-
-.list-card .span {
+.list-card .text-wrapper {
   font-weight: 700;
 }
-
-.list-card .text-wrapper-2 {
+.list-card .span {
   font-family: "Karla-Regular", Helvetica;
+  max-width: 20ch;
 }
-
 .list-card .location {
   display: flex;
   flex-direction: column;
@@ -199,8 +125,7 @@ const {data} = Astro.props;
   flex: 0 0 auto;
   margin-bottom: -9.01px;
 }
-
-.list-card .location-vestre {
+.list-card .a-loc {
   position: relative;
   align-self: stretch;
   margin-top: -1px;
@@ -211,7 +136,6 @@ const {data} = Astro.props;
   letter-spacing: 0;
   line-height: 23px;
 }
-
 .list-card .img-frame {
   display: flex;
   flex-direction: column;
@@ -224,16 +148,14 @@ const {data} = Astro.props;
   top: 0;
   left: 26px;
 }
-
-.list-card .img {
+.list-card .a-img {
   position: relative;
   flex: 1;
   align-self: stretch;
-  width: 100%;
+  width: 90%;
   flex-grow: 1;
   object-fit: cover;
 }
-
 .list-card .outline {
   position: absolute;
   width: 517px;
@@ -241,5 +163,4 @@ const {data} = Astro.props;
   top: 0;
   left: 0;
 }
-
 </style>

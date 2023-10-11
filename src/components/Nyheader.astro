@@ -1,0 +1,331 @@
+<div class="absolut">
+  <nav>
+    <a href="/index/"> <img src="/media/img/logo/logo.webp" alt="logo" /></a>
+
+    <div class="alllinks">
+      <div class="dropdown">
+        <a href="#" class="linkknap">Program</a>
+        <div class="dropdown-content">
+          <a class="sublink" href="/list-view/">Program 2024</a>
+          <a class="sublink" href="#">Tours + Pop up events</a>
+          <a class="sublink" href="#">Previous festivals</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="linkknap">Info</a>
+        <div class="dropdown-content2">
+          <a class="sublink" href="#">FAQ</a>
+          <div class="aboutusknap">
+            <a class="sublink linkknap" href="#">About us</a>
+            <div class="dropdown-content4">
+              <a class="sublink" href="">Who are we</a>
+              <a class="sublink" href="">Vision</a>
+            </div>
+          </div>
+          <div class="workknap">
+            <a class="sublink linkknap" href="#">Work with us</a>
+            <div class="dropdown-content5">
+              <a class="sublink" href="">Artists</a>
+              <a class="sublink" href="">Companies</a>
+              <a class="sublink" href="">Contact</a>
+            </div>
+          </div>
+          <a class="sublink" href="#">Press</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="linkknap">Map</a>
+        <div class="dropdown-content3">
+          <a class="sublink" href="/map/">Full Map</a>
+          <a class="sublink" href="#">Routes</a>
+        </div>
+      </div>
+    </div>
+    <div class="burger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </nav>
+</div>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .absolut {
+    position: absolute;
+    z-index: 1000;
+  }
+
+  a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+  }
+
+  img {
+    width: 15%;
+  }
+  /* top navigation for at flytte logo og menu fra hinanden */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /* Alle de overordnet links*/
+  .alllinks {
+    margin-top: -2.5rem;
+    display: flex;
+    gap: 4rem;
+    margin-right: 1%;
+  }
+
+  /* Div for at styre posistion absolut af dropdown */
+  .dropdown {
+    position: relative;
+  }
+
+  /* Dropdown gemt som standard */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(20, 19, 60, 0.82);
+    top: 15px;
+    width: 400%;
+    z-index: 1;
+    margin-top: 20%;
+    padding: 1rem;
+    margin-right: 50%;
+  }
+
+  .dropdown-content2 {
+    display: none;
+    position: absolute;
+    background-color: rgba(20, 19, 60, 0.82);
+    top: 15px;
+    width: 870%;
+    left: -8rem;
+    z-index: 1;
+    margin-top: 30%;
+    padding: 1rem;
+    margin-right: 50%;
+  }
+
+  .dropdown-content3 {
+    display: none;
+    position: absolute;
+    background-color: rgba(20, 19, 60, 0.82);
+    top: 15px;
+    width: 800%;
+    left: -14rem;
+    z-index: 1;
+    margin-top: 30%;
+    padding: 1rem;
+    margin-right: 50%;
+  }
+
+  .dropdown-content4 {
+    display: none;
+    position: absolute;
+    background-color: rgba(20, 19, 60, 0.82);
+    top: 15px;
+    width: 80%;
+    left: -12.3rem;
+    z-index: 1;
+    margin-top: 17%;
+    padding: 1rem;
+    margin-right: 50%;
+  }
+
+  .dropdown-content5 {
+    display: none;
+    position: absolute;
+    background-color: rgba(20, 19, 60, 0.82);
+    top: 15px;
+    width: 80%;
+    left: -12.3rem;
+    z-index: 1;
+    margin-top: 17%;
+    padding: 1rem;
+    margin-right: 50%;
+  }
+
+  .aboutusknap {
+    text-align: center;
+  }
+
+  .workknap {
+    text-align: center;
+  }
+
+  /* Link i drop down */
+  .dropdown-content a {
+    min-width: 3rem;
+    text-align: center;
+  }
+
+  .dropdown-content2 a {
+    min-width: 3rem;
+    text-align: center;
+  }
+
+  .dropdown-content3 a {
+    min-width: 3rem;
+    text-align: center;
+  }
+  /* Her kan du style dropdown links */
+  .dropdown-content a:hover {
+  }
+
+  /* Viser dropdown menu med hover */
+  .dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown:hover .dropdown-content2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown:hover .dropdown-content3 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .aboutusknap:hover .dropdown-content4 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .workknap:hover .dropdown-content5 {
+    display: flex;
+    flex-direction: column;
+  }
+  /*Burger menu */
+
+  /*gemmer burger som standard */
+  .burger {
+    display: none;
+    cursor: pointer;
+    margin-right: 3%;
+    margin-top: -2rem;
+  }
+
+  /*burger icon */
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: rgb(255, 255, 255);
+  }
+
+  @media (max-width: 600px) {
+    /*viser burger menu */
+    .burger {
+      display: block;
+    }
+
+    img {
+      width: 30%;
+    }
+
+    /*Animation til burger ikon fra 3 lige streger til et kryds når 
+  det er aktivt (vi bruger classen active i javascript til at aktivere 
+  nedenstående */
+    .burger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .burger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .burger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+    /*fortæller hvor de overordnet lins skal placeres og de ikke skal 
+vises på række men som colonne */
+    .alllinks {
+      position: absolute;
+      right: 0;
+      margin-top: 1rem;
+      top: 3rem;
+      z-index: 1;
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      width: 8rem;
+      padding: 5%;
+      text-align: center;
+      background-color: rgba(24, 23, 90, 0.76);
+    }
+    /*Viser hvor drop down skal plaveres */
+    .dropdown-content {
+      position: absolute;
+      left: -230px;
+      width: 250%;
+      top: -2.5rem;
+      background-color: rgba(25, 49, 97, 0.76);
+    }
+
+    .dropdown-content2 {
+      position: absolute;
+      left: -230px;
+      width: 250%;
+      top: -5.5rem;
+      background-color: rgba(25, 49, 97, 0.76);
+    }
+
+    .dropdown-content3 {
+      position: absolute;
+      left: -230px;
+      width: 250%;
+      top: -4rem;
+      background-color: rgba(25, 49, 97, 0.76);
+    }
+
+    .dropdown-content a {
+      margin-bottom: 5%;
+    }
+
+    /*Vi putter active på .alllinks for at vise menuen via javascrips */
+    .alllinks.active {
+      display: flex;
+    }
+    .linkknap {
+      margin: 16px 0;
+    }
+  }
+</style>
+
+<script>
+  /*Vi vælger burger menu iconet og alllinks(de overordnet links så vi
+    kan bruge dem nedenfor) */
+  const burger = document.querySelector(".burger");
+  const alllinks = document.querySelector(".alllinks");
+
+  /*Vi sætter en eventlistner på burger iconet
+og laver en funktion som siger når man 
+klikker på ikonet skal den putte classen 
+active på burger iconet så det ændre sig samt
+alllinks for at vise dem, vi bruger toggle for at
+kunne trykke på burger iconet igen og fjerne menuen */
+  burger.addEventListener("click", () => {
+    burger.classList.toggle("active");
+    alllinks.classList.toggle("active");
+  });
+
+  /*Her vælger vi alle sublinks fra dropdown menuen
+så når vi trykker på den så fjerner vi classen
+active og menuen forsvinder og burger iconet går
+tilbage til normal */
+  document.querySelectorAll(".sublink").forEach((n) =>
+    n.addEventListener("click", () => {
+      burger.classList.remove("active");
+      alllinks.classList.remove("active");
+    })
+  );
+</script>

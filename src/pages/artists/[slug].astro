@@ -22,28 +22,181 @@ const cImg = `../${theArtist.cImg}`
 ---
 
 <MainLayout title={theArtist.aName}>
-    <div class="single-card">
-      <div class="container">
-        <div class="artist-box">
-          <div class="a-name"><h3>{theArtist.aName}</h3></div>
-          <p class="div">
-            <span class="text-wrapper">By: </span> <span class="span">{theArtist.cName}</span>
-          </p>
-          <p class="div">
-            <span class="text-wrapper">Location: </span>
-            <span class="span">{theArtist.aLoc}</span>
-          </p>
-        </div>
-        <div class="image-box">
-          <img class="a-img" src=`../${theArtist.aImg}` />
-          <p class="a-desc">{theArtist.aDesc}</p>
-        </div>
-        <div class="creator-box">
-          <img class="frame" src="../media/svg/SingleDesktopOutline.svg" />
-          <div class="creator">
-            <div class="frame-2">
-                <div class="c-name">
-                    {theArtist.cName}
+<article class="container">
+  <section class="topBox">
+    <h3>{theArtist.aName}</h3>
+    <p>By: <span>{theArtist.cName}</span></p>
+    <p>Location: <span>{theArtist.aLoc}</span></p>
+  </section>
+  <section class="middleBox">
+    <div>
+      <img src=`../${theArtist.aImg}` />
+    </div>
+    <div class="middleInfo">
+      <p>{theArtist.aDesc}</p>
+      <section>
+        {theArtist.aHours || theArtist.aDate ? <h4>Important dates!</h4>: null}
+        <ul>
+            {theArtist.aHours && <li>Can be viewed at: {theArtist.aHours}</li>}
+            {theArtist.aDate && <li>{theArtist.aDate}</li>}
+        </ul>
+     </section>
+    </div>
+  </section>
+  <section class="bottomBox">
+    <div class="border borderLeftBox"></div>
+    <div class="creatorBox border borderRightBox">
+      <div class="creatorInfo">
+          <h3>{theArtist.cName}</h3>
+          <p>{theArtist.cDesc}</p>
+          <ul>
+            {theArtist.links && <li>Links: <a href={theArtist.links}>{theArtist.links}</a></li>}
+            {theArtist.some && <li>Social media: <a href={theArtist.some}>{theArtist.some}</a></li>}
+            {theArtist.thanksTo && <li>Thanks to: {theArtist.thanksTo}</li>}
+          </ul>
+      </div>
+      <div class="creatorImg">
+        {theArtist.cImg && <img src={cImg} alt={theArtist.cDesc} />}
+      </div>
+    </div>
+
+    </div>
+  </section>
+</article>
+</MainLayout>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+ul {
+  list-style: none;
+}
+.container {
+  display: grid;
+  grid-template-rows: 0.25fr 1fr 1fr;
+  margin-top: 15vh;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80vw;
+  height: 80vh;
+}
+.topBox {
+  display: grid;
+  margin: 0.5rem;
+  grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+  justify-content: left;
+}
+.middleBox {
+  display: grid;
+  margin: 0.5rem;
+  gap: 2rem;
+  grid-template-columns: minmax(200px, 100%) minmax(100px, 100%);
+  width: 100%;
+  height: 100%;
+}
+.middleInfo {
+  margin: 1rem;
+  align-content: space-between;
+}
+.bottomBox {
+  display: grid;
+  grid-template-columns: 1.5fr 4fr;
+  margin-top: 2rem;
+  width: 100%;
+  height: 100%;
+}
+.creatorBox {
+  display: grid;
+  grid-template-columns: 2fr minmax(300px, 600px);
+}
+.creatorInfo {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 2rem;
+}
+.creatorImg {
+  margin: 2rem;
+}
+.border {
+  border: 0.2rem solid transparent;
+  border-radius: 1rem;
+  height: 100%;
+  width: 100%;
+  border-image: linear-gradient(to right,#FE373B, #BD4FA4, #8B61F6, #2983D0, #00B7B5) 10;
+}
+.borderLeftBox {
+  height: 100%;
+  width: 100%;
+  border-bottom: 10px;
+  border-left: 10px;
+}
+.borderRightBox {
+  height: 100%;
+  width: 100%;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-image: linear-gradient(to right, #00B7B5, #2983D0, #8B61F6, #BD4FA4, #FE373B) 10;
+}
+@media (max-width: 1024px) {
+  .container {
+  grid-template-rows: 0.25fr 1fr 1fr;
+  width: 85vw;
+  height: 85vh;
+}
+.topBox {
+  margin: 0;
+}
+  .middleBox {
+    grid-template-columns: 1fr;
+    margin: 0;
+    gap: 0.25rem;
+  }
+  .bottomBox {
+  grid-template-columns: 1fr;
+  margin: 0;
+}
+.creatorBox {
+  grid-template-columns: 1fr;
+}
+.creatorImg {
+  margin: 0rem;
+}
+}
+@media (max-width: 600px) {
+  .container {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  height: 100%;
+}
+.topBox {
+  margin: 0;
+}
+  .middleBox {
+    grid-template-columns: 1fr;
+    margin: 0;
+    gap: 0.25rem;
+  }
+  .bottomBox {
+  grid-template-columns: 1fr;
+  margin: 0;
+}
+.creatorBox {
+  grid-template-columns: 1fr;
+}
+}
+</style>
+<!--
                 </div>
               <p class="c-desc">{theArtist.cDesc}</p>
               <section id="">
@@ -65,10 +218,8 @@ const cImg = `../${theArtist.cImg}`
           </div>
         </div>
       </div>
-    </div>
-</MainLayout>
-
-<style>
+    </article> -->
+<!-- <style>
 .single-card {
     margin-top: 15vh;
     display: grid;
@@ -80,13 +231,11 @@ const cImg = `../${theArtist.cImg}`
     place-content: center;
     grid-template-rows: auto 1fr 1fr;
 }
-
 .single-card .container {
 display: grid;
 gap: 1rem;
 grid-template-rows: repeat(3, auto);
 }
-
 .single-card .artist-box {
   display: grid;
   justify-content: left;
@@ -94,12 +243,10 @@ grid-template-rows: repeat(3, auto);
   width: 100%;
   height: fit-content;
 }
-
 .single-card .div {
   position: relative;
   align-self: stretch;
 }
-
 .single-card .image-box {
   display: flex;
   flex-direction: row;
@@ -109,7 +256,6 @@ grid-template-rows: repeat(3, auto);
   position: relative;
   align-self: stretch;
 }
-
 .single-card .a-img {
   flex: 1;
   flex-grow: 1;
@@ -117,27 +263,23 @@ grid-template-rows: repeat(3, auto);
   position: relative;
   align-self: stretch;
 }
-
 .single-card .a-desc {
   flex: 1;
   min-width: 300px;
   max-width: 600px;
 }
-
 .single-card .creator-box {
   display: flex;
   align-items: flex-start;
   gap: 18px;
   position: relative;
 }
-
 .single-card .frame {
   position: relative;
   width: 90%;
   min-width:850px;
   max-width: 1100px;
 }
-
 .single-card .creator {
   display: inline-flex;
   align-items: flex-start;
@@ -145,7 +287,6 @@ grid-template-rows: repeat(3, auto);
   position: absolute;
   left: 32%;
 }
-
 .single-card .frame-2 {
   display: flex;
   flex-direction: column;
@@ -155,25 +296,17 @@ grid-template-rows: repeat(3, auto);
   position: relative;
   align-self: stretch;
 }
-
 .single-card .c-name {
   position: relative;
   align-self: stretch;
 }
-
 .single-card .c-desc {
   position: relative;
 }
-
 .single-card .c-img {
   position: relative;
   align-self: stretch;
   width: 300px;
   object-fit: cover;
-}
-@mediaquery (max-width: 1000px) {
-    /* div.image-box {
-        flex-direction: columns;
-    } */
-}
-</style>
+} 
+</style> -->

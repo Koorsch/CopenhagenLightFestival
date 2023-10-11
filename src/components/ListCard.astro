@@ -1,6 +1,7 @@
 ---
 const {data} = Astro.props;
 import "../css/global.css";
+
 ---
 
 <article class="itemContainer">
@@ -27,6 +28,7 @@ import "../css/global.css";
   }
   .imageBox img {
     margin: 2rem;
+    pointer-events: none;
   }
   .textBox {
     display: grid;

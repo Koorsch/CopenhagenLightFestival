@@ -227,7 +227,7 @@
   .bar {
     display: block;
     width: 25px;
-    height: 3px;
+    height: 2px;
     margin: 5px auto;
     background-color: rgb(255, 255, 255);
   }
@@ -245,14 +245,17 @@
     /*Animation til burger ikon fra 3 lige streger til et kryds når 
   det er aktivt (vi bruger classen active i javascript til at aktivere 
   nedenstående */
+
+    .burger.active .bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
     .burger.active .bar:nth-child(2) {
       opacity: 0;
     }
-    .burger.active .bar:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
+
     .burger.active .bar:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
+      transform: rotate(-45deg) translate(5px, -5px);
     }
     /*fortæller hvor de overordnet lins skal placeres og de ikke skal 
 vises på række men som colonne */
@@ -268,7 +271,7 @@ vises på række men som colonne */
       width: 8rem;
       padding: 5%;
       text-align: center;
-      background-color: rgba(24, 23, 90, 0.76);
+      background-color: rgba(20, 19, 60, 0.82);
     }
     /*Viser hvor drop down skal plaveres */
     .dropdown-content {
@@ -276,7 +279,7 @@ vises på række men som colonne */
       left: -220px;
       width: 250%;
       top: -2.5rem;
-      background-color: rgba(25, 49, 97, 0.76);
+      background-color: rgba(20, 19, 60, 0.82);
     }
 
     .dropdown-content2 {
@@ -284,7 +287,7 @@ vises på række men som colonne */
       left: -220px;
       width: 250%;
       top: -5.5rem;
-      background-color: rgba(25, 49, 97, 0.76);
+      background-color: rgba(20, 19, 60, 0.82);
     }
 
     .dropdown-content3 {
@@ -292,7 +295,7 @@ vises på række men som colonne */
       left: -220px;
       width: 250%;
       top: -4rem;
-      background-color: rgba(25, 49, 97, 0.76);
+      background-color: rgba(20, 19, 60, 0.82);
     }
 
     .dropdown-content a {

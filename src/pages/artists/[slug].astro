@@ -1,5 +1,6 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
+import Header from "../../components/Header.astro";
 export async function getStaticPaths() {
 const data = await fetch("https://ogaxuggyhpkmcikcmeli.supabase.co/rest/v1/clf", 
 {
@@ -22,6 +23,8 @@ const cImg = `../${theArtist.cImg}`
 ---
 
 <MainLayout title={theArtist.aName}>
+<Header>
+</Header>
 <article class="container">
   <section class="topBox">
     <h3>{theArtist.aName}</h3>

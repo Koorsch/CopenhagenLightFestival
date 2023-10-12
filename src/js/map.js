@@ -232,7 +232,7 @@ async function initMap() {
   <h2>${locationData.title}</h2>
   <h3>${locationData.who}</h3>
   <h5>${locationData.time}</h5>
-  <p style="max-width: 200px;">${locationData.description}</p>
+  <p style="max-width: 300px;">${locationData.description}</p>
   <img src="${locationData.imageSrc}" alt="Image Alt Text" width="150">
 </div>
   `;

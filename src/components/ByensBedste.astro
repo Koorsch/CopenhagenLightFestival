@@ -9,7 +9,7 @@
 
 <style>
   .vote {
-    z-index: 100000;
+    z-index: 1000;
     position: fixed;
     margin-top: 33.5%;
     margin-left: 89.2%;
@@ -49,7 +49,7 @@
     var scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
     // Define a threshold value to determine when the arrow should disappear
-    var threshold = 100; // Adjust this value as needed
+    var threshold = 250; // Adjust this value as needed
 
     // Check if the scroll position is below the threshold
     if (scrollPosition > threshold) {

@@ -232,9 +232,8 @@ async function initMap() {
     <div style="  background: rgb(2,20,56);
     background: linear-gradient(178deg, rgba(2,20,56,1) 13%, rgba(17,17,68,1) 24%, rgba(16,39,77,1) 35%, rgba(2,67,76,1) 46%, rgba(1,50,93,1) 59%, rgba(7,41,57,1) 71%, rgba(14,31,77,1) 85%);
      color:white;padding:5%;">
-     <img src="/media/img/logo/logo.webp" alt="Image Alt Text" width="100">
-  <h2 style="font-size:1.5rem";>${locationData.title}</h2>
-  <h3  style="font-size:1.3rem";>${locationData.who}</h3>
+  <h2 style="font-size:1.5rem; margin-bottom:-10%;">${locationData.title}</h2>
+  <h3  style="font-size:1.3rem; margin-bottom:-10%;">${locationData.who}</h3>
   <h5  style="font-size:1rem";>${locationData.time}</h5>
   <p style="max-width: 300px;">${locationData.description}</p>
   <img src="${locationData.imageSrc}" alt="Image Alt Text" width="350">

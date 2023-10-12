@@ -1,5 +1,5 @@
 ---
-import Header from "../components/Header.astro";
+import Header from "../components/Nyheader.astro";
 const {data} = Astro.props;
 ---
 
@@ -11,11 +11,10 @@ const {data} = Astro.props;
         <title>Add Map</title>
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         <!-- <link rel="stylesheet" type="text/css" href="src/css/mapstyle.css" > -->
-        <script type="module" src="src/js/map.js"></script>
+        <script type="module" src="/src/js/map.js"></script>
       </head>
       <body>
         <div class="centered">
-         <img class="logo" src="/media/img/logo/logo.webp" alt="logo" />
           <Header></Header>
 
         </div>
@@ -24,7 +23,7 @@ const {data} = Astro.props;
 
         <!-- prettier-ignore -->
         <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-            ({key: "AIzaSyBfRKVZ08er8Mn_lP7ONimTIaX3lbSS8wk", v: "beta"});</script>
+            ({key: "AIzaSyBfRKVZ08er8Mn_lP7ONimTIaX3lbSS8wk", v: "bheta"});</script>
       </body>
 </html>
 <style>
@@ -41,10 +40,7 @@ background: linear-gradient(90deg, rgba(5,31,124,1) 0%, rgba(0,7,103,1) 4%, rgba
 #map {
   height: 100%;
 }
-.logo {
-  margin: 1%;
 
-}
 
 .centered {
   display: flex;

@@ -38,8 +38,8 @@ async function initMap() {
 
     // Create custom marker icons
     const allEvening = new google.maps.MarkerImage("/media/svg/Marker_Red.svg", null, null, null, new google.maps.Size(50, 50));
-    const opningHours = new google.maps.MarkerImage("/media/src/svg/Marker_blue.svg", null, null, null, new google.maps.Size(50, 50));
-    const popUp = new google.maps.MarkerImage("/media/src/svg/Marker_orange.svg", null, null, null, new google.maps.Size(50, 50));
+    const opningHours = new google.maps.MarkerImage("/media/svg/Marker_blue.svg", null, null, null, new google.maps.Size(50, 50));
+    const popUp = new google.maps.MarkerImage("/media/svg/Marker_orange.svg", null, null, null, new google.maps.Size(50, 50));
 
 
   // The map, centered at festival
@@ -56,7 +56,7 @@ async function initMap() {
       who:"Artist",
       time: "TIME: All Evening",
       description: "Description 1",
-      imageSrc: "https://copenhagenlightfestival.org/wp-content/uploads/2023/01/Insekternes-Blik-1.jpg",
+      imageSrc: "/media/img/artpiece/boelgeland.webp",
       iconName: opningHours
     },
     {
@@ -65,7 +65,7 @@ async function initMap() {
       who:"Artist",
       time: "TIME: All Evening",
       description: "Description 2",
-      imageSrc: "https://koocorp.dk/CLF/nautilus.webp",
+      imageSrc: "/media/img/artpiece/boelgeland.webp",
       iconName: allEvening,
     },
     {
@@ -74,7 +74,7 @@ async function initMap() {
       who:"Artist",
       time: "TIME: All Evening",
       description: "Description 3",
-      imageSrc: "images/Transcending Messages.jpg",
+      imageSrc: "/media/img/artpiece/boelgeland.webp",
       iconName: allEvening,
     },
     {
@@ -83,7 +83,7 @@ async function initMap() {
       who:"Artist",
       time: "TIME: All Evening",
       description: "Description 3",
-      imageSrc: "images/Time & Place 2.jpg",
+      imageSrc: "/media/img/artpiece/boelgeland.webp",
       iconName: allEvening,
     },
     {
@@ -92,7 +92,7 @@ async function initMap() {
       who:"Artist",
       time: "TIME: 18:00-22:00",
       description: "Description 3",
-      imageSrc: "images/Time & Place 1.jpg",
+      imageSrc: "/media/img/artpiece/boelgeland.webp",
       iconName: opningHours,
     },
     {
@@ -101,7 +101,7 @@ async function initMap() {
       who:"Artist",
       time: "TIME: 18:00-22:00",
       description: "Description 3",
-      imageSrc: "images/Hook-Up.jpg",
+      imageSrc: "/media/img/artpiece/boelgeland.webp",
       iconName: opningHours,
     },
     {
@@ -110,7 +110,7 @@ async function initMap() {
       who:"Artist",
       time: "TIME: 18:00-22:00",
       description: "Description 3",
-      imageSrc: "images/Time & Place 2.jpg",
+      imageSrc: "/media/img/artpiece/boelgeland.webp",
       iconName: opningHours,
     },
     {
@@ -119,7 +119,7 @@ async function initMap() {
       who:"Artist",
       time: "TIME: All Evening",
       description: "Copenhagen City Hall + 11 other landmarks",
-      imageSrc: "images/White Beams-1.jpg",
+      imageSrc: "/media/img/artpiece/boelgeland.webp",
       iconName: allEvening,
     },
     {
@@ -128,7 +128,7 @@ async function initMap() {
       who:"Artist",
       time: "TIME: All Evening",
       description: "Copenhagen City Hall + 11 other landmarks",
-      imageSrc: "images/White Beams-1.jpg",
+      imageSrc: "/media/img/artpiece/boelgeland.webp",
       iconName: allEvening,
     },
     {
@@ -137,7 +137,7 @@ async function initMap() {
       who:"Artist",
       time: "TIME: All Evening",
       description: "Copenhagen City Hall + 11 other landmarks",
-      imageSrc: "images/Terra 1.jpg",
+      imageSrc: "/media/img/artpiece/boelgeland.webp",
       iconName: allEvening,
     },
     {
@@ -146,7 +146,7 @@ async function initMap() {
       who:"Artist",
       time: "TIME: All Evening",
       description: "Copenhagen City Hall + 11 other landmarks",
-      imageSrc: "images/Waves 2.jpg",
+      imageSrc: "/media/img/artpiece/boelgeland.webp",
       iconName: allEvening,
     },
     {
@@ -155,7 +155,7 @@ async function initMap() {
       who:"Artist",
       time: "TIME: All Evening",
       description: "Copenhagen City Hall + 11 other landmarks",
-      imageSrc: "images/Blue Earth 1.jpg",
+      imageSrc: "/media/img/artpiece/boelgeland.webp",
       iconName: allEvening,
     },
     {
@@ -164,7 +164,7 @@ async function initMap() {
       who:"Artist",
       time: "TIME: All Evening",
       description: "Copenhagen City Hall + 11 other landmarks",
-      imageSrc: "images/Acid Sun.jpg",
+      imageSrc: "/media/img/artpiece/boelgeland.webp",
       iconName: allEvening,
     },
     {
@@ -173,7 +173,7 @@ async function initMap() {
       who:"Artist",
       time: "TIME: All Evening",
       description: "Copenhagen City Hall + 11 other landmarks",
-      imageSrc: "images/Nautilus.jpg",
+      imageSrc: "/media/img/artpiece/boelgeland.webp",
       iconName: allEvening,
     },
     {
@@ -182,7 +182,7 @@ async function initMap() {
       who:"Artist",
       time: "TIME: All Evening",
       description: "Copenhagen City Hall + 11 other landmarks",
-      imageSrc: "images/Dancing on Water 2.jpg",
+      imageSrc: "/media/img/artpiece/boelgeland.webp",
       iconName: popUp,
     },
     {
@@ -191,7 +191,7 @@ async function initMap() {
       who:"Artist",
       time: "TIME: All Evening",
       description: "Copenhagen City Hall + 11 other landmarks",
-      imageSrc: "images/Water Walk 2.jpg",
+      imageSrc: "/media/img/artpiece/boelgeland.webp",
       iconName: allEvening,
     },
     {
@@ -200,7 +200,7 @@ async function initMap() {
       who:"Artist",
       time: "TIME: All Evening",
       description: "Copenhagen City Hall + 11 other landmarks",
-      imageSrc: "images/LES OISEAUX.jpg",
+      imageSrc: "/media/img/artpiece/boelgeland.webp",
       iconName: popUp,
     },
   ];

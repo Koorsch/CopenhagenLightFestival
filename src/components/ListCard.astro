@@ -12,7 +12,9 @@ import "../css/global.css";
   <div class="border borderTopBox"></div>
   <div class="border borderLeftBottomBox">
       <div class="infoBox">
-        <a href=`/artists/${data.slug}`><h3>{data.aName}</h3></a>
+        <div class="linkBox">
+          <a href=`/artists/${data.slug}`><h3>{data.aName}</h3><img id="arrow" src="/media/svg/Arrow.svg" alt="arrow"></a>
+        </div>
         <p><b>By: </b> <span>{data.cName}</span></p>
         <p><b>Location: </b> <span>{data.aLoc}</span></p>
     </div>
@@ -26,6 +28,22 @@ import "../css/global.css";
     margin: 0;
     padding: 0;
   }
+
+a {
+  display: flex;
+  color: white;
+  width: 100%;
+}
+a:visited, a:active, a:link {
+text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.linkBox {
+  display: flex;
+  flex-direction: column;
+}
   .imageBox img {
     margin: 2rem;
     pointer-events: none;

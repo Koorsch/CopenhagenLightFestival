@@ -1,7 +1,7 @@
 ---
 import Map from "./Map.astro";
 ---
-
+<header>
 <div class="absolut">
   <nav>
     <a href="/index/"> <img src="/media/img/logo/logo.webp" alt="logo" /></a>
@@ -52,6 +52,7 @@ import Map from "./Map.astro";
     </div>
   </nav>
 </div>
+</header>
 
 <style>
   * {
@@ -60,9 +61,14 @@ import Map from "./Map.astro";
     box-sizing: border-box;
   }
 
-  .absolut {
+  header {
+    display: block;
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
+  }
+  .absolute {
     position: absolute;
-    z-index: 1000;
   }
 
   a {

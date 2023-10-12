@@ -53,9 +53,9 @@ async function initMap() {
     {
       position: { lat: 55.656055, lng: 12.526869 },
       title: "INSEKTERNES BLIK",
-      who:"Artist",
+      who:"By: Alessandro Lupi (IT)",
       time: "TIME: All Evening",
-      description: "Description 1",
+      description: "The installation works without utilizing energy from burning fossil fuels. The opposite goes for the reality reflected in the many small mirrors. Can fragments be put back together?",
       imageSrc: "/media/img/artpiece/boelgeland.webp",
       iconName: opningHours
     },
@@ -219,12 +219,12 @@ async function initMap() {
 
     const contentString = `
     <div>
-      <h2>${locationData.title}</h2>
-      <h3>${locationData.who}</h3>
-      <h5>${locationData.time}</h5>
-      <p>${locationData.description}</p>
-      <img src="${locationData.imageSrc}" alt="Image Alt Text" width="200">
-    </div>
+  <h2>${locationData.title}</h2>
+  <h3>${locationData.who}</h3>
+  <h5>${locationData.time}</h5>
+  <p style="max-width: 200px;">${locationData.description}</p>
+  <img src="${locationData.imageSrc}" alt="Image Alt Text" width="150">
+</div>
   `;
 
 

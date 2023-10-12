@@ -226,16 +226,19 @@ async function initMap() {
       title: locationData.title,
       icon: locationData.iconName,
     });
+  
 
     const contentString = `
     <div>
-  <h2>${locationData.title}</h2>
-  <h3>${locationData.who}</h3>
-  <h5>${locationData.time}</h5>
+  <h2 style="font-size:1.5rem";>${locationData.title}</h2>
+  <h3  style="font-size:1.3rem";>${locationData.who}</h3>
+  <h5  style="font-size:1rem";>${locationData.time}</h5>
   <p style="max-width: 300px;">${locationData.description}</p>
   <img src="${locationData.imageSrc}" alt="Image Alt Text" width="150">
 </div>
   `;
+
+
 
 
     const infoWindow = new google.maps.InfoWindow({

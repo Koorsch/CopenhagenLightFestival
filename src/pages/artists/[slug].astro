@@ -20,7 +20,6 @@ return data.map((artist) => {
 });
 }
 const {theArtist} = Astro.props;
-const cImg = `../${theArtist.cImg}`
 ---
 
 <MainLayout title={theArtist.aName}>
@@ -60,7 +59,7 @@ const cImg = `../${theArtist.cImg}`
           </ul>
       </div>
       <div class="creatorImg">
-        {theArtist.cImg && <img src={cImg} alt={theArtist.cDesc} />}
+        {theArtist.cImg && <img src={theArtist.cImg} alt={theArtist.cDesc} />}
       </div>
     </div>
 

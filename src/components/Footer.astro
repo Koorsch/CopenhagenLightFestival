@@ -1,13 +1,11 @@
 ---
 
 ---
-
 <div class="footerz">
-  <div class="footer-baggrund">
+  
     <div>
-      <div class="footer-border"></div>
 
-      <section class="footer">
+      <div class="footer">
         <div class="følg-os">
           <p class="overskrifter"><b>Følg os</b></p>
           <div class="icons-boks">
@@ -32,28 +30,23 @@
             </form>
           </div>
         </div>
-      </section>
-    </div>
-  </div>
+      </div>
 </div>
+
 
 <style>
   .footerz {
-    z-index: 1000000000000;
-    position: relative;
+  position:static; /* or absolute, depending on your layout */
+  bottom: 0;
+  width: 100%;
+  display: block;
+  background-color: #0c0d39;
+  color: white;
+  border-top: 5px solid transparent;
+  border-image: linear-gradient(to right, #fe373b, #bd4f76, #8b61f6, #2983d0, #00b7b5);
+  border-image-slice: 1;
   }
-  .footer-baggrund {
-    background-color: #0c0d39;
-    margin-top: 5%;
-  }
-  .footer-baggrund p {
-    color: white;
-  }
-  .footer-border {
-    width: 100%;
-    height: 0.2rem;
-    background: linear-gradient(to right, #fe373b, #bd4f76, #8b61f6, #2983d0, #00b7b5);
-  }
+
 
   .icons {
     width: 15%;

@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
 import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
 export async function getStaticPaths() {
 const data = await fetch("https://ogaxuggyhpkmcikcmeli.supabase.co/rest/v1/clf", 
 {
@@ -66,6 +67,7 @@ const cImg = `../${theArtist.cImg}`
     </div>
   </section>
 </article>
+<Footer></Footer>
 </MainLayout>
 <style>
   * {
@@ -84,11 +86,12 @@ ul {
 .container {
   display: grid;
   grid-template-rows: 0.25fr 1fr 1fr;
-  margin-top: 15vh;
+  margin-top: 0%;
+  margin-bottom: 10%;
   margin-left: auto;
   margin-right: auto;
-  width: 80vw;
-  height: 80vh;
+  width: 70%;
+  height: 100%;
 }
 .topBox {
   display: grid;

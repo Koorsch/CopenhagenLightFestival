@@ -236,7 +236,7 @@ async function initMap() {
   <h3  style="font-size:1.3rem; margin-bottom:-10%;">${locationData.who}</h3>
   <h5  style="font-size:1rem";>${locationData.time}</h5>
   <p style="max-width: 300px;">${locationData.description}</p>
-  <img src="${locationData.imageSrc}" alt="Image Alt Text" width="350">
+  <img src="${locationData.imageSrc}" alt="Image Alt Text" width="250">
 </div>
   `;
 

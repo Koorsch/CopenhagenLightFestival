@@ -1,5 +1,6 @@
 ---
-import Header from "../components/Nyheader.astro";
+import Header from "../components/Header.astro";
+import "../css/global.css";
 const {data} = Astro.props;
 ---
 
@@ -27,6 +28,7 @@ const {data} = Astro.props;
       </body>
 </html>
 <style>
+  @import url('https://fonts.googleapis.com/css?family=Karla:400,500');
 html,
 body {
   height: 100%;

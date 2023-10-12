@@ -31,4 +31,4 @@ pnpm-debug.log*
 *.jpg
 *.jpeg
 *.gif
-*.png
+#*.png

@@ -48,15 +48,27 @@
     // Get the current scroll position
     var scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
-    // Define a threshold value to determine when the arrow should disappear
-    var threshold = 250; // Adjust this value as needed
+    // Define a threshold value to determine when the arrow should appear
+    var showThreshold = 250; // Adjust this value as needed
 
-    // Check if the scroll position is below the threshold
-    if (scrollPosition > threshold) {
-      // Hide the arrow by adding a CSS class
+    // Get the height of the document
+    var documentHeight = Math.max(
+      document.body.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.clientHeight,
+      document.documentElement.scrollHeight,
+      document.documentElement.offsetHeight
+    );
+
+    // Define a threshold value to determine when the arrow should disappear (bottom of the page)
+    var hideThreshold = documentHeight - window.innerHeight;
+
+    // Check if the scroll position is below the showThreshold
+    if (scrollPosition > showThreshold && scrollPosition < hideThreshold) {
+      // Show the arrow by removing the CSS class
       byensknap.classList.remove("hidden");
     } else {
-      // Show the arrow by removing the CSS class
+      // Hide the arrow by adding the CSS class
       byensknap.classList.add("hidden");
     }
   }
@@ -67,3 +79,4 @@
   // Initial call to handleScroll to set the initial state
   handleScroll();
 </script>
+

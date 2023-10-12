@@ -54,8 +54,8 @@ const cImg = `../${theArtist.cImg}`
           <h3>{theArtist.cName}</h3>
           <p>{theArtist.cDesc}</p>
           <ul>
-            {theArtist.links && <li>Links: <a href={theArtist.links}>{theArtist.links}</a></li>}
-            {theArtist.some && <li>Social media: <a href={theArtist.some}>{theArtist.some}</a></li>}
+            {theArtist.links && <li>Links: <span><a href={theArtist.links}>{theArtist.links}</a></span> </li>}
+            {theArtist.some && <li>Social media: <span><a href={theArtist.some}>{theArtist.some}</a></span> </li>}
             {theArtist.thanksTo && <li>Thanks to: {theArtist.thanksTo}</li>}
           </ul>
       </div>
@@ -152,6 +152,20 @@ ul {
   border-right: 0;
   border-image: linear-gradient(to right, #00B7B5, #2983D0, #8B61F6, #BD4FA4, #FE373B) 10;
 }
+a{
+        background: linear-gradient(to right, #FB383F,#7A67F3, #00B8B5); /* Replace these colors with your desired gradient */
+        -webkit-background-clip: text;
+        color: transparent;
+        display: inline;
+    }
+    a:hover{
+      background: linear-gradient(to right, #FB383F,#ffffff, #00B8B5); /* Replace these colors with your desired gradient */
+        -webkit-background-clip: text;
+        color: transparent;
+        display: inline;
+  
+    }
+
 @media (max-width: 1024px) {
   .container {
   grid-template-rows: 0.25fr 1fr 1fr;

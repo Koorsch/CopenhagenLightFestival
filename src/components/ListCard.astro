@@ -8,18 +8,18 @@ import "../css/global.css";
   <section class="imageBox border borderLeftBox">
     <img src={data.aImg} alt="">
   </section>
-<section class="textBox">
-  <div class="border borderTopBox"></div>
-  <div class="border borderLeftBottomBox">
-      <div class="infoBox">
-        <div class="linkBox">
-          <a href=`/artists/${data.slug}`><h3>{data.aName}</h3><img id="arrow" src="/media/svg/Arrow.svg" alt="arrow"></a>
-        </div>
-        <p><b>By: </b> <span>{data.cName}</span></p>
-        <p><b>Location: </b> <span>{data.aLoc}</span></p>
+  <section class="textBox">
+    <div class="border borderTopBox"></div>
+    <div class="border borderLeftBottomBox">
+        <div class="infoBox">
+          <div class="linkBox">
+            <a href=`/artists/${data.slug}`><h3>{data.aName}</h3><img id="arrow" src="/media/svg/Arrow.svg" alt="arrow"></a>
+          </div>
+          <p><b>By: </b> <span>{data.cName}</span></p>
+          <p><b>Location: </b> <span>{data.aLoc}</span></p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 </article>
 
 <style>

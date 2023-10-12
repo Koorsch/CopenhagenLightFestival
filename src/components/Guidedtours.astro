@@ -2,92 +2,88 @@
 
 ---
 
-<div class="container">
-    
-    <img class="line" src="/media/svg/GuidedTours_Line.svg" alt="PC">
-    <div class="img-overlay">
-        <img src="/media/img/artpiece/Guided_tours.webp" alt="food">
-    </div>
-    <div class="buttons">
-        <div class="nominees">
-            <a href="#">Guided Tours <img class="arrow" src="/media/svg/Arrow.svg" alt="arrow"></a>
+<article class="itemContainer">
+    <section class="imageBox border borderLeftBox">
+      <img src="/media/img/artpiece/Guided_tours.webp" alt="">
+    </section>
+    <section class="textBox">
+      <div class="border borderTopBox"></div>
+      <div class="border borderLeftBottomBox">
+          <div class="infoBox">
+            <div class="linkBox">
+              <a href="#"><h4>Guided tours</h4><img id="arrow" src="/media/svg/Arrow.svg" alt="arrow"></a>
+            </div>
         </div>
-    </div>
-    
-</div>
-
-
-        <style>
-            .container {
-    position: relative;
-
-    text-align: center;
-    margin-left: 0%;
-
-    max-width: 100%;
-    margin-top: 2%;
-    
-}
-img {
-    
-    width: 50%;
-    height: auto;
-    margin-left: auto;
-}
-.line {
-    width: 20%;
-}
-.img-overlay {
-    position: absolute;
-    top: 0;
-    left:30%;
-    width: 45%;
-    height: 80%;
-}
-
-.buttons-container {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-
-}
-
-.buttons {
-    position: absolute; 
-    left: 53.5%;
-    top: 88%;
-}
-
-.arrow{
-    width: 10%;
-    
-    
-}
+      </div>
+    </section>
+  </article>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 a {
-    
-    text-decoration: underline;
-    color: white;
-    cursor: pointer;
-    font-size: 0.8vw;
-    z-index: 50;
+  display: flex;
+  color: white;
+  width: 100%;
+}
+a:visited, a:active, a:link {
+text-decoration: none;
 }
 a:hover {
-    color: rgb(1, 221, 148);
-   
+  text-decoration: underline;
 }
-
-/* Media query for screens narrower than 800px */
-@media (max-width: 800px) {
-    .video-overlay {
-      
-    }
-
-    video {
-        width: 100%;
-        height: auto;
-    }
+.itemContainer {
+    display: grid;
+    grid-template-columns: auto;
+    width: 30%;
+    margin: auto;
 }
-        </style>
-       
-   
+.linkBox {
+  display: flex;
+  flex-direction: column;
+}
+  .imageBox img {
+    margin: 2rem;
+    width: 100%;
+    pointer-events: none;
+  }
+  .textBox {
+    display: grid;
+    grid-template-columns: 1.5fr 4fr;
+  }
+  .infoBox {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+.border {
+  border: 0.2rem solid transparent;
+  border-radius: 1rem;
+  height: 100%;
+  width: 100%;
+  border-image: linear-gradient(to right,#FE373B, #BD4FA4, #8B61F6, #2983D0, #00B7B5) 10;
+}
+.borderLeftBox {
+  height: 100%;
+  width: 100%;
+  border-right: 10px;
+  border-top: 10px;
+  border-bottom: 10px;
+}
+.borderTopBox {
+  height: 100%;
+  width: 100%;
+  border-right: 10px;
+  border-left: 10px;
+  border-bottom: 10px;
+}
+.borderLeftBottomBox {
+  height: 100%;
+  width: 75%;
+  border-right: 10px;
+  border-top: 10px;
+  border-image: linear-gradient(to right,#00B7B5, #2983D0, #8B61F6, #BD4FA4, #FE373B) 10;
+}
+</style>

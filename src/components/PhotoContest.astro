@@ -2,102 +2,99 @@
 
 ---
 
-<div class="container">
-    
-    <img src="/media/svg/PhotoContest_Line.svg" alt="PC">
-    <div class="video-overlay">
+<article class="itemContainer">
+    <section class="imageBox border borderLeftBox">
         <video autoplay muted>
             <source src="/media/video/PhotoContest.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-    </div>
-    <div class="buttons">
-        <div class="nominees">
-            <a href="#">Nominees 2024 <img class="arrow" src="/media/svg/Arrow.svg" alt="arrow"></a>
+    </section>
+    <section class="textBox">
+      <div class="border borderTopBox"></div>
+      <div class="border borderLeftBottomBox">
+          <div class="infoBox">
+            <div class="linkBox">
+                <a href="#">Participate 2024 <img class="arrow" src="/media/svg/Arrow.svg" alt="arrow"></a>
+                <a href="#">Nominees 2024 <img class="arrow" src="/media/svg/Arrow.svg" alt="arrow"></a>
+            </div>
+
         </div>
-        <div class="participate"> 
-            <a href="#">Participate 2024 <img class="arrow" src="/media/svg/Arrow.svg" alt="arrow"></a>
-        </div>
-    </div>
-    
-</div>
+      </div>
+    </section>
+  </article>
 
-
-        <style>
-            .container {
-    position: relative;
-
-    text-align: center;
-    margin-left: 8%;
-
-    max-width: 100%;
-    margin-top: 10%;
-    
-}
-img {
-    
-    width: 50%;
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    .itemContainer {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: auto;
+        width: 80%;
+        margin-left: 20%;
+    }
+  video {
+    width: 70%;
+    margin: 2rem;
     height: auto;
-    margin-left: auto;
-}
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left:0%;
-    width: 50%;
-    height: 80%;
-}
-video {
-    position: absolute;
-    top: 50%;
-    left: 92%;
-    transform: translate(-50%, -50%);
-    max-width: 100%;
-    max-height: 100%;
-}
-.buttons-container {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-
-}
-
-.buttons {
-    position: absolute; 
-    left: 66%;
-    top: 83%;
-}
-
-.arrow{
-    width: 10%;
-    
-    
-}
-a {
-    
-    text-decoration: underline;
+  }
+  a {
+    display: flex;
     color: white;
-    cursor: pointer;
-    font-size: 0.8vw;
-    z-index: 50;
-}
-a:hover {
-    color: rgb(1, 221, 148);
-   
-}
-
-/* Media query for screens narrower than 800px */
-@media (max-width: 800px) {
-    .video-overlay {
-      
+    width: 100%;
+  }
+  a:visited, a:active, a:link {
+  text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .linkBox {
+    display: flex;
+    flex-direction: column;
+  }
+    .imageBox img {
+      margin: 2rem;
+      pointer-events: none;
     }
-
-    video {
-        width: 100%;
-        height: auto;
+    .textBox {
+      display: grid;
+      grid-template-columns: 3fr 3fr;
     }
-}
-        </style>
-       
-   
+    .infoBox {
+      margin: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+  .border {
+    border: 0.2rem solid transparent;
+    border-radius: 1rem;
+    height: 100%;
+    width: 100%;
+    border-image: linear-gradient(to right,#FE373B, #BD4FA4, #8B61F6, #2983D0, #00B7B5) 10;
+  }
+  .borderLeftBox {
+    height: 100%;
+    width: 100%;
+    border-right: 10px;
+    border-top: 10px;
+    border-bottom: 10px;
+  }
+  .borderTopBox {
+    height: 100%;
+    width: 100%;
+    border-right: 10px;
+    border-left: 10px;
+    border-bottom: 10px;
+  }
+  .borderLeftBottomBox {
+    height: 100%;
+    width: 45%;
+    border-right: 10px;
+    border-top: 10px;
+    border-image: linear-gradient(to right,#00B7B5, #2983D0, #8B61F6, #BD4FA4, #FE373B) 10;
+  }
+  </style>

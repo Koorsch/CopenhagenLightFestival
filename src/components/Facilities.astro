@@ -2,108 +2,103 @@
 
 ---
 
-<div class="container">
-    
-    <img src="/media/svg/FoodandDrink_line.svg" alt="PC">
-    <div class="img-overlay">
-        <img src="/media/img/artpiece/Food_and_Drink.webp" alt="food">
-    </div>
-    <div class="tekst-overlay">
+<article class="itemContainer">
+    <section class="textBox border borderTopBox">
         <h3>Facilities</h3>
-        <p>
-            The festival collaborates with several educational institutions that work with light and art in one way or another. We do this because we want to support the lighting designers and artists of the future. 
+        <p>The festival collaborates with several educational institutions that work with light and art in one way or another. We do this because we want to support the lighting designers and artists of the future. 
             See the various study projects on our 2024 program.</p>
-    </div>
-    <div class="buttons">
-        <div class="nominees">
-            <a href="#">Food & Drink <img class="arrow" src="/media/svg/Arrow.svg" alt="arrow"></a>
+    </section>
+    <section class="imageBox">
+        <div class="imgBox border borderImageBox">
+            <img id="food" src="/media/img/artpiece/Food_and_Drink.webp" alt="food">
         </div>
-    </div>
-    
-</div>
+        <div class="linkBox">
+            <span class="border borderTopBoxTwo"></span>
+            <a href="#" class="border borderLinkBox"><p>Food & Drink</p><img id="arrow" src="/media/svg/Arrow.svg" alt="arrow"></a>
+        </div>
+    </section>
+</article>
 
-
-        <style>
-            .container {
-    position: relative;
-
-    text-align: center;
-    margin-left: 0%;
-
-    max-width: 100%;
-    margin-top: 10%;
-    
-}
-img {
-    
-    width: 50%;
-    height: auto;
-    margin-left: auto;
-}
-.img-overlay {
-    position: absolute;
-    top: 0;
-    left:44%;
-    width: 45%;
-    height: 80%;
-}
-.tekst-overlay {
-    position: absolute;
-    top:0%;
-    left:25%;
-    width: 25%;
-    height: 100%;
-    text-align: left;
-}
-.buttons-container {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-
-}
-
-.buttons {
-    position: absolute; 
-    left: 68%;
-    top: 88%;
-}
-
-.arrow{
-    width: 10%;
-    
-    
+<style>
+a {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: white;
+  align-items: center;
 }
 h3 {
-    font-size: 2vw;
+    font-size: 1.8vw;
 }
 p {
-    font-size: 1vw;
+    margin: 0.5rem;
+    font-size: 1.2vw;
 }
-a {
-    
-    text-decoration: underline;
-    color: white;
-    cursor: pointer;
-    font-size: 0.8vw;
-    z-index: 50;
+a > img {
+    margin: 0.5rem;
+}
+a:visited, a:active, a:link {
+text-decoration: none;
 }
 a:hover {
-    color: rgb(1, 221, 148);
-   
+  text-decoration: underline;
 }
-
-/* Media query for screens narrower than 800px */
-@media (max-width: 800px) {
-    .video-overlay {
-      
-    }
-
-    video {
-        width: 100%;
-        height: auto;
-    }
+.itemContainer {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    width: 60%;
+    margin: 5% 5% 5% 20%;
 }
-        </style>
-       
-   
+.textBox {
+    width: 100%;
+}
+.imgBox {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.imageBox {
+    display: grid;
+    grid-template-rows: 3fr 0.25fr;
+}
+.imageBox #food {
+    margin: 2rem;
+}
+.linkBox {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+.border {
+    border: 0.2rem solid transparent;
+    height: 100%;
+    width: 100%;
+    border-image: linear-gradient(to right,#FE373B, #BD4FA4, #8B61F6, #2983D0, #00B7B5) 10;
+}
+.borderTopBox {
+    border-right: 10px;
+    border-left: 10px;
+    border-bottom: 10px;
+  }
+.borderTopBoxTwo {
+    border-right: 10px;
+    border-left: 10px;
+    border-bottom: 10px;
+    border-image: linear-gradient(to right, #00B7B5, #2983D0, #8B61F6, #BD4FA4, #FE373B) 10;
+  }
+  .borderImageBox {
+    border-right: 10px;
+    border-top: 10px;
+    border-bottom: 10px;
+    border-image: linear-gradient(to right, #00B7B5, #2983D0, #8B61F6, #BD4FA4, #FE373B) 10;
+  }
+  .borderLinkBox {
+    border-top: 10px;
+    border-right: 10px;
+    width: 90%;
+  }
+  #arrow {
+    margin: 0;
+  }
+  #food {
+    height: auto;
+  }
+</style>

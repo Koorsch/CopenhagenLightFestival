@@ -2,39 +2,68 @@
 
 ---
 
-<div>
-   <img src="/media/svg/byensbedste.svg" alt="byensbedste" />
-    <div class="vote"><a href="#"><p>Vote here</p></a></div>
-  </div>
-  
-  <style>
-    .vote {
-      z-index: 100000;
-      position: absolute;
-      position: fixed;
-      margin-top: 40.5%;
-      margin-left: 88.9%;
-    }
-  
-    a {
-      text-decoration: none;
-      font-weight: 0.2rem;
-      color: white;
-    }
-  
-    a:hover {
-      color: rgba(44, 35, 107, 0.699);
-      
-    }
-  
-    img {
-      margin-top: 38%;
-      margin-left: 82%;
-      width: 12%;
-      position: absolute;
-      position: fixed;
-      z-index: 1000;
-    }
-  
+<div id="byensknap" class="hidden">
+  <img src="/media/svg/byensbedste.svg" alt="byensbedste" />
+  <div class="vote"><a href=""><p>Vote here</p></a></div>
+</div>
 
-  </style>
+<style>
+  .vote {
+    z-index: 100000;
+    position: fixed;
+    margin-top: 43.5%;
+    margin-left: 87.9%;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: 0.2rem;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  a :hover {
+    color: rgb(71, 60, 145);
+  }
+
+  img {
+    margin-top: 40%;
+    margin-left: 78%;
+    width: 17%;
+    position: fixed;
+    z-index: 1000;
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
+
+<script>
+  // Get a reference to the arrow element
+  var byensknap = document.getElementById("byensknap");
+
+  // Function to handle the scroll event
+  function handleScroll() {
+    // Get the current scroll position
+    var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+    // Define a threshold value to determine when the arrow should disappear
+    var threshold = 100; // Adjust this value as needed
+
+    // Check if the scroll position is below the threshold
+    if (scrollPosition > threshold) {
+      // Hide the arrow by adding a CSS class
+      byensknap.classList.remove("hidden");
+    } else {
+      // Show the arrow by removing the CSS class
+      byensknap.classList.add("hidden");
+    }
+  }
+
+  // Add a scroll event listener to call the handleScroll function when scrolling
+  window.addEventListener("scroll", handleScroll);
+
+  // Initial call to handleScroll to set the initial state
+  handleScroll();
+</script>

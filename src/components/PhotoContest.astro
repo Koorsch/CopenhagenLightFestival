@@ -3,7 +3,7 @@
 ---
 
 <article class="itemContainer">
-  <h2>Photo Contest</h2>
+  <h3>Photo Contest</h3>
     <section class="imageBox border borderLeftBox">
         <video autoplay muted>
             <source src="/media/video/PhotoContest.webm" type="video/mp4">
@@ -18,7 +18,6 @@
                 <a href="#">Participate 2024 <img class="arrow" src="/media/svg/Arrow.svg" alt="arrow"></a>
                 <a href="#">Nominees 2024 <img class="arrow" src="/media/svg/Arrow.svg" alt="arrow"></a>
             </div>
-
         </div>
       </div>
     </section>
@@ -30,13 +29,14 @@
       margin: 0;
       padding: 0;
     }
-    h2 {
-      margin: 1rem 0 1rem 1rem;
+    h3 {
+      margin: 4rem 0 1rem 2rem;
+      font-size: 1.8vw;
     }
     .itemContainer {
         display: grid;
-        grid-template-rows: auto;
-        grid-template-columns: auto;
+        grid-template-rows: 0.25fr 1fr 0.15fr;
+        grid-template-columns: 1fr;
         width: 80%;
         margin-left: 20%;
     }
@@ -100,5 +100,30 @@
     border-right: 10px;
     border-top: 10px;
     border-image: linear-gradient(to right,#00B7B5, #2983D0, #8B61F6, #BD4FA4, #FE373B) 10;
+  }
+
+  @media (max-width: 800px) {
+    h3 {
+      font-size: 5vw;
+    }
+    .textBox {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+
+    }
+    .infoBox {
+      margin: 0;
+    }
+    .linkBox {
+      margin-left: 1rem;
+      flex-wrap: wrap;
+    }
+    .borderTopBox {
+      border-top: 0;
+    }
+    .borderLeftBottomBox {
+      border-image: linear-gradient(to right,#FE373B, #BD4FA4, #8B61F6, #2983D0, #00B7B5) 10;
+    }
+
   }
   </style>

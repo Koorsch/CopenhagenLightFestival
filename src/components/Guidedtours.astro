@@ -23,6 +23,13 @@
     margin: 0;
     padding: 0;
   }
+  h4 {
+    font-size: 1.6vw;
+}
+p {
+    margin: 0.5rem;
+    font-size: 1.2vw;
+}
 a {
   display: flex;
   color: white;
@@ -36,7 +43,7 @@ a:hover {
 }
 .itemContainer {
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
     width: 30%;
     margin: auto;
 }
@@ -44,10 +51,14 @@ a:hover {
   display: flex;
   flex-direction: column;
 }
+.imageBox {
+  width: 100%;
+  height: auto;
+}
   .imageBox img {
     margin: 2rem;
     width: 100%;
-    pointer-events: none;
+    object-fit: cover;
   }
   .textBox {
     display: grid;

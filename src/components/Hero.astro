@@ -4,9 +4,12 @@
 
 <body>
     <div class="hero">
-        <video autoplay loop muted>
-            <source src="/media/video/CopenhagenLightFestival.webm" type="video/webm">
-        </video>
+        <img class="heroImg" src="/media/video/cphl_hero.webp" alt="Hero picture of the CPHL light installation" />
+       <!-- 
+        Hero video taking way too much, my poor Netlify account.
+            <video autoplay loop muted>
+                <source src="/media/video/CopenhagenLightFestival.webm" type="video/webm">
+            </video> -->
         <section id="date">
             <h1>February<br>3rd - 26th<br>2024</h1>
         </section>
@@ -20,7 +23,7 @@
         overflow: hidden;
     }
 
-    video {
+    .heroImg, video {
         position: absolute;
         top: 0;
         left: 0;

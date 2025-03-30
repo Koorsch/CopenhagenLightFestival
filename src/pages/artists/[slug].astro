@@ -1,0 +1,218 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+export async function getStaticPaths() {
+const data = await fetch("https://ogaxuggyhpkmcikcmeli.supabase.co/rest/v1/clf", 
+{
+    method: "GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9nYXh1Z2d5aHBrbWNpa2NtZWxpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTYyMjk5MTAsImV4cCI6MjAxMTgwNTkxMH0.sNxRHYiLpJz47USf7p1J_3MlM3lf10QkoUyIV8D0kyI",
+    },
+}
+).then(response => response.json());
+
+return data.map((artist) => {
+    return {
+        params: { slug: artist.slug},
+        props: { theArtist:artist },
+    };
+});
+}
+const {theArtist} = Astro.props;
+---
+
+<MainLayout title={theArtist.aName}>
+<Header>
+</Header>
+<article class="container">
+  <section class="topBox">
+    <h3>{theArtist.aName}</h3>
+    <p>By: <span>{theArtist.cName}</span></p>
+    <p>Location: <span>{theArtist.aLoc}</span></p>
+  </section>
+  <section class="middleBox">
+    <div>
+      <img src=`${theArtist.aImg}` />
+    </div>
+    <div class="middleInfo">
+      <p>{theArtist.aDesc}</p>
+      <section>
+        {theArtist.aHours || theArtist.aDate ? <h4>Important dates!</h4>: null}
+        <ul>
+            {theArtist.aHours && <li>Can be viewed at: {theArtist.aHours}</li>}
+            {theArtist.aDate && <li>{theArtist.aDate}</li>}
+        </ul>
+     </section>
+    </div>
+  </section>
+  <section class="bottomBox">
+    <div class="border borderLeftBox"></div>
+    <div class="creatorBox border borderRightBox">
+      <div class="creatorInfo">
+          <h3>{theArtist.cName}</h3>
+          <p>{theArtist.cDesc}</p>
+          <ul>
+            {theArtist.links && <li>Links: <span><a href={theArtist.links}>{theArtist.links}</a></span> </li>}
+            {theArtist.some && <li>Social media: <span><a href={theArtist.some}>{theArtist.some}</a></span> </li>}
+            {theArtist.thanksTo && <li>Thanks to: {theArtist.thanksTo}</li>}
+          </ul>
+      </div>
+      <div class="creatorImg">
+        {theArtist.cImg && <img src={theArtist.cImg} alt={theArtist.cDesc} />}
+      </div>
+    </div>
+
+    </div>
+  </section>
+</article>
+<Footer></Footer>
+</MainLayout>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+img {
+  width: 100%;
+  height: 100%;
+  object-position: left 20%;
+  object-fit: cover;
+}
+ul {
+  list-style: none;
+}
+.container {
+  display: grid;
+  grid-template-rows: 0.25fr 1fr 1fr;
+  margin-top: 0%;
+  margin-bottom: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  height: 100%;
+}
+.topBox {
+  display: grid;
+  margin: 0.5rem;
+  grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+  justify-content: left;
+}
+.middleBox {
+  display: grid;
+  margin: 0.5rem;
+  gap: 2rem;
+  grid-template-columns: minmax(200px, 100%) minmax(100px, 100%);
+  width: 100%;
+  height: 100%;
+}
+.middleInfo {
+  margin: 1rem;
+  align-content: space-between;
+}
+.bottomBox {
+  display: grid;
+  grid-template-columns: 1.5fr 4fr;
+  margin-top: 2rem;
+  width: 100%;
+  height: 100%;
+}
+.creatorBox {
+  display: grid;
+  grid-template-columns: 2fr minmax(300px, 600px);
+}
+.creatorInfo {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 2rem;
+}
+.creatorImg {
+  margin: 2rem;
+}
+.border {
+  border: 0.2rem solid transparent;
+  border-radius: 1rem;
+  height: 100%;
+  width: 100%;
+  border-image: linear-gradient(to right,#FE373B, #BD4FA4, #8B61F6, #2983D0, #00B7B5) 10;
+}
+.borderLeftBox {
+  height: 100%;
+  width: 100%;
+  border-bottom: 10px;
+  border-left: 10px;
+}
+.borderRightBox {
+  height: 100%;
+  width: 100%;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-image: linear-gradient(to right, #00B7B5, #2983D0, #8B61F6, #BD4FA4, #FE373B) 10;
+}
+a{
+        background: linear-gradient(to right, #FB383F,#7A67F3, #00B8B5); /* Replace these colors with your desired gradient */
+        -webkit-background-clip: text;
+        color: transparent;
+        display: inline;
+    }
+    a:hover{
+      background: linear-gradient(to right, #FB383F,#ffffff, #00B8B5); /* Replace these colors with your desired gradient */
+        -webkit-background-clip: text;
+        color: transparent;
+        display: inline;
+  
+    }
+
+@media (max-width: 1024px) {
+  .container {
+  grid-template-rows: 0.25fr 1fr 1fr;
+  width: 85%;
+  height: 85%;
+}
+.topBox {
+  margin: 0;
+}
+  .middleBox {
+    grid-template-columns: 1fr;
+    margin: 0;
+    gap: 0.25rem;
+  }
+  .bottomBox {
+  grid-template-columns: 1fr;
+  margin: 0;
+}
+.creatorBox {
+  grid-template-columns: 1fr;
+}
+.creatorImg {
+  margin: 0rem;
+}
+}
+@media (max-width: 600px) {
+  .container {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  height: 100%;
+}
+.topBox {
+  margin: 0;
+}
+  .middleBox {
+    grid-template-columns: 1fr;
+    margin: 0;
+    gap: 0.25rem;
+  }
+  .bottomBox {
+  grid-template-columns: 1fr;
+  margin: 0;
+}
+.creatorBox {
+  grid-template-columns: 1fr;
+}
+}
+</style>

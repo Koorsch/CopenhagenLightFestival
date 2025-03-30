@@ -1,0 +1,171 @@
+---
+
+---
+<div class="footerz">
+  
+    <div>
+
+      <div class="footer">
+        <div class="følg-os">
+          <p class="overskrifter"><b>Følg os</b></p>
+          <div class="icons-boks">
+            <img class="icons" src="/media/icons/facebook.webp" alt="facebook" />
+            <img class="icons" src="/media/icons/instagram.webp" alt="instagram" />
+          </div>
+        </div>
+
+        <div>
+          <div class="kontakt-info">
+            <p class="overskrifter"><b>Kontakt</b></p>
+            <p class="info">Mail <br /> info@copenhagenlightfestival.org <br /><br /> Phone <br /> +45 25556604</p>
+          </div>
+        </div>
+
+        <div class="nyhedsbrev">
+          <p>Get the latest updates from COPENHAGEN LIGHT FESTIVAL Festival</p>
+          <div class="form-container">
+            <form>
+              <input type="text" class="email-input" placeholder="Your email adress" />
+              <input type="submit" class="submit-button" value="→" />
+            </form>
+          </div>
+        </div>
+      </div>
+</div>
+
+
+<style>
+  .footerz {
+  position:static; /* or absolute, depending on your layout */
+  bottom: 0;
+  width: 100%;
+  display: block;
+  background-color: #0c0d39;
+  color: white;
+  border-top: 5px solid transparent;
+  border-image: linear-gradient(to right, #fe373b, #bd4f76, #8b61f6, #2983d0, #00b7b5);
+  border-image-slice: 1;
+  
+  }
+
+
+  .icons {
+    width: 15%;
+    margin-top: 5%;
+  }
+
+  .icons-boks {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .følg-os {
+    margin-left: 10%;
+  }
+
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    margin-top: 5%;
+    padding-bottom: 4%;
+  }
+
+  .form-container {
+    width: 120%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* Style the form */
+  form {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ffffff8a;
+    padding: 1%;
+    margin-top: 5%;
+  }
+
+  /* Style the input field */
+  .email-input {
+    padding: 2%;
+    border: none;
+    font-size: 1rem;
+    width: 85%;
+  }
+
+  /* Style the submit button */
+  .submit-button {
+    color: rgb(255, 255, 255);
+    border: none; /* Remove the border */
+    background: linear-gradient(to right, #fe373b, #bd4f76, #8b61f6, #2983d0, #00b7b5);
+    border-radius: 5px;
+    padding: 3% 4%;
+    cursor: pointer;
+    outline: none;
+  }
+
+  /* Style the placeholder text */
+  .email-input::placeholder {
+    color: #888;
+  }
+
+  .nyhedsbrev {
+    width: 40%;
+    margin-left: 50%;
+  }
+
+  .nyhedsbrev p {
+    font-size: 1.3rem;
+  }
+
+  @media (max-width: 800px) {
+    .footer {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10%;
+      padding-bottom: 15%;
+    }
+
+    .følg-os {
+      margin-left: 10%;
+      margin-left: 10%;
+    }
+
+    .kontakt-info {
+      margin-top: 15%;
+      margin-left: 10%;
+    }
+
+    .icons-boks {
+      display: flex;
+      flex-direction: row;
+      gap: 5%;
+    }
+
+    .info {
+      font-size: 1.2rem;
+    }
+
+    .icons {
+      width: 12%;
+      margin-top: 5%;
+    }
+
+    .nyhedsbrev {
+      width: 85%;
+      margin-left: 10%;
+      margin-top: 15%;
+    }
+
+    .nyhedsbrev p {
+      font-size: 2rem;
+    }
+
+    .overskrifter {
+      font-size: 2rem;
+    }
+  }
+</style>

@@ -1,0 +1,105 @@
+---
+
+---
+
+<article class="itemContainer">
+    <section class="textBox border borderTopBox">
+        <h3>Facilities</h3>
+        <p>The festival collaborates with several educational institutions that work with light and art in one way or another. We do this because we want to support the lighting designers and artists of the future. 
+            See the various study projects on our 2024 program.</p>
+    </section>
+    <section class="imageBox">
+        <div class="imgBox border borderImageBox">
+            <img id="food" src="/media/img/artpiece/Food_and_Drink.webp" alt="food">
+        </div>
+        <div class="linkBox">
+            <span class="border borderTopBoxTwo"></span>
+            <a href="#" class="border borderLinkBox"><p>Food & Drink</p><img id="arrow" src="/media/svg/Arrow.svg" alt="arrow"></a>
+        </div>
+    </section>
+</article>
+
+<style>
+a {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: white;
+  align-items: center;
+}
+h3 {
+    font-size: 1.8vw;
+}
+p {
+    margin: 0.5rem;
+    font-size: 1.2vw;
+}
+a > img {
+    margin: 0.5rem;
+}
+a:visited, a:active, a:link {
+text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.itemContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 60%;
+    margin: 5% 5% 5% 20%;
+}
+.textBox {
+    width: 100%;
+}
+.imgBox {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.imageBox {
+    display: grid;
+    grid-template-rows: 3fr 0.25fr;
+}
+.imageBox #food {
+    margin: 2rem;
+}
+.linkBox {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+.border {
+    border: 0.2rem solid transparent;
+    height: 100%;
+    width: 100%;
+    border-image: linear-gradient(to right,#FE373B, #BD4FA4, #8B61F6, #2983D0, #00B7B5) 10;
+}
+.borderTopBox {
+    border-right: 10px;
+    border-left: 10px;
+    border-bottom: 10px;
+  }
+.borderTopBoxTwo {
+    border-right: 10px;
+    border-left: 10px;
+    border-bottom: 10px;
+    border-image: linear-gradient(to right, #00B7B5, #2983D0, #8B61F6, #BD4FA4, #FE373B) 10;
+  }
+  .borderImageBox {
+    border-right: 10px;
+    border-top: 10px;
+    border-bottom: 10px;
+    border-image: linear-gradient(to right, #00B7B5, #2983D0, #8B61F6, #BD4FA4, #FE373B) 10;
+  }
+  .borderLinkBox {
+    border-top: 10px;
+    border-right: 10px;
+    width: 100%;
+  }
+  #arrow {
+    margin: 0;
+  }
+  #food {
+    height: auto;
+    width: 100%;
+  }
+</style>

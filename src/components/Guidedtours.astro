@@ -1,0 +1,100 @@
+---
+
+---
+
+<article class="itemContainer">
+    <section class="imageBox border borderLeftBox">
+      <img src="/media/img/artpiece/Guided_tours.webp" alt="">
+    </section>
+    <section class="textBox">
+      <div class="border borderTopBox"></div>
+      <div class="border borderLeftBottomBox">
+          <div class="infoBox">
+            <div class="linkBox">
+              <a href="#"><h4>Guided tours</h4><img id="arrow" src="/media/svg/Arrow.svg" alt="arrow"></a>
+            </div>
+        </div>
+      </div>
+    </section>
+  </article>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  h4 {
+    font-size: 1.6vw;
+}
+p {
+    margin: 0.5rem;
+    font-size: 1.2vw;
+}
+a {
+  display: flex;
+  color: white;
+  width: 100%;
+}
+a:visited, a:active, a:link {
+text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.itemContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 30%;
+    margin: auto;
+}
+.linkBox {
+  display: flex;
+  flex-direction: column;
+}
+.imageBox {
+  width: 100%;
+  height: auto;
+}
+  .imageBox img {
+    margin: 2rem;
+    width: 100%;
+    object-fit: cover;
+  }
+  .textBox {
+    display: grid;
+    grid-template-columns: 1.5fr 4fr;
+  }
+  .infoBox {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+.border {
+  border: 0.2rem solid transparent;
+  border-radius: 1rem;
+  height: 100%;
+  width: 100%;
+  border-image: linear-gradient(to right,#FE373B, #BD4FA4, #8B61F6, #2983D0, #00B7B5) 10;
+}
+.borderLeftBox {
+  height: 100%;
+  width: 100%;
+  border-right: 10px;
+  border-top: 10px;
+  border-bottom: 10px;
+}
+.borderTopBox {
+  height: 100%;
+  width: 100%;
+  border-right: 10px;
+  border-left: 10px;
+  border-bottom: 10px;
+}
+.borderLeftBottomBox {
+  height: 100%;
+  width: 75%;
+  border-right: 10px;
+  border-top: 10px;
+  border-image: linear-gradient(to right,#00B7B5, #2983D0, #8B61F6, #BD4FA4, #FE373B) 10;
+}
+</style>

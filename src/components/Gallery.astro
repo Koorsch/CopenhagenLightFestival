@@ -1,0 +1,117 @@
+---
+import ListCard from "../components/ListCard.astro";
+import "../css/global.css";
+
+const data = await fetch("https://ogaxuggyhpkmcikcmeli.supabase.co/rest/v1/clf", 
+{ 
+    method: "GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9nYXh1Z2d5aHBrbWNpa2NtZWxpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTYyMjk5MTAsImV4cCI6MjAxMTgwNTkxMH0.sNxRHYiLpJz47USf7p1J_3MlM3lf10QkoUyIV8D0kyI",
+    },
+}).then((res) => res.json());
+
+---
+<section id="clf__gallery" class="gallery" aria-label="CLF Image Gallery">
+    <div class="gallery__track">
+        <div class="gallery__nav">
+            <h3>Installations</h3>
+            <div>
+                <button>
+                    <svg width="40" height="60" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <polyline points="30 10 10 30 30 50" stroke="rgba(255,255,255,0.5)" stroke-width="4" stroke-linecap="butt" fill="none" stroke-linejoin="round">&gt;</polyline>
+                      </svg>
+                </button>
+                <button>
+                    <svg width="40" height="60" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <polyline points="10 10 30 30 10 50" stroke="rgba(255,255,255,0.5)" stroke-width="4" stroke-linecap="butt" fill="none" stroke-linejoin="round">&lt;</polyline>
+                      </svg>
+                </button>
+            </div>
+        </div>
+          <ul class="gallery__list">
+            {
+                data.map((artist) => {
+                    return <li class="gallery_item"><ListCard data={artist} /></li>
+            })
+            }
+          </ul>
+    </div>
+  </section>
+
+<style>
+* {
+    margin:0;
+}
+.gallery__list::-webkit-scrollbar {
+
+  height: 5px;
+
+}
+.gallery__list::-webkit-scrollbar-track {
+  background: linear-gradient(to right, #FB383F,#7A67F3, #00B8B5);
+}
+.gallery__list::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right,#7A67F3, #000ed3);
+  border-radius: 25px;
+  
+}
+#clf__gallery {
+    display: grid;
+    padding: 0 5vw;
+    width: fit-content;
+    height: fit-content;
+    overflow-x: hidden;
+}
+
+.gallery__track {
+    width: 100%;
+    overflow: hidden;
+    cursor: grab;
+}
+.gallery__track h3 {
+    margin-left: 4rem;
+}
+.gallery__nav {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-direction: row;
+    height: fit-content;
+}
+.gallery__nav > div > button {
+    background-color: transparent;
+    border: 0;
+    align-items: center;
+    margin: 1rem;
+    gap: 2rem;
+}
+.gallery__nav > div > button:hover {
+    transform: scale(1.2);
+}
+.gallery__list {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    height: fit-content;
+}
+.gallery__item {
+}
+ul {
+    list-style: none;
+    padding: 1rem;
+}
+li {
+    margin: 1rem;
+}
+
+
+@media (max-width: 800px) {
+    #clf__gallery {
+    padding: 0;
+}
+}
+</style>
